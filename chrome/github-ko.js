@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
     const $ = document.querySelectorAll.bind(document);
     Array.from($("nav a")).forEach(e => {
+        console.log(e.innerHTML);
         if (e.innerText.trim() == "Pull requests") {
             e.innerText = "풀 리퀘스트";
         } else if (e.innerText.trim() == "Issues") {
@@ -9,6 +10,10 @@ window.addEventListener("load", () => {
             e.innerText = "장터";
         } else if (e.innerText.trim() == "Explore") {
             e.innerText = "탐색";
+        } else if (e.innerText.trim() == "Overview") {
+            e.innerText = "개요";
+        } else if (e.innerText.trim() == "Repositories") {
+            e.innerText = "저장소";
         }
     });
 
@@ -31,7 +36,7 @@ window.addEventListener("load", () => {
             e.innerText = "로그아웃";
         } else if (e.innerText.trim() == "Set your status") {
             e.innerText = "내 상태 설정";
-        }
+        } 
     });
 
     Array.from($("div.footer a")).forEach(e => {
@@ -51,6 +56,8 @@ window.addEventListener("load", () => {
             e.innerText = "교육";
         } else if (e.innerText.trim() == "Blog") {
             e.innerText = "블로그";
+        } else if (e.innerText.trim() == "Help") {
+            e.innerText = "도움말";
         } else if (e.innerText.trim() == "About") {
             e.innerText = "안내";
         }
