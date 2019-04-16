@@ -1,67 +1,114 @@
-window.addEventListener("load", () => {
-    const $ = document.querySelectorAll.bind(document);
-    Array.from($("nav a")).forEach(e => {
-        console.log(e.innerHTML);
-        if (e.innerText.trim() == "Pull requests") {
-            e.innerText = "풀 리퀘스트";
-        } else if (e.innerText.trim() == "Issues") {
-            e.innerText = "이슈";
-        } else if (e.innerText.trim() == "Marketplace") {
-            e.innerText = "장터";
-        } else if (e.innerText.trim() == "Explore") {
-            e.innerText = "탐색";
-        } else if (e.innerText.trim() == "Overview") {
-            e.innerText = "개요";
-        } else if (e.innerText.trim() == "Repositories") {
-            e.innerText = "저장소";
-        }
+const patterns = [
+    {base: "nav a", replaces: [
+        [/Repositories/, "저장소"],
+        [/Pull requests/, "풀 리퀘스트"],
+        [/Issues/, "이슈"],
+        [/Marketplace/, "장터"],
+        [/Explore/, "탐색"],
+        [/Overview/, "개요"],
+        [/Projects/, "프로젝트"],
+        [/Stars/, "스타"],
+        [/Followers/, "팔로워"],
+        [/Following/, "팔로잉"],
+        [/People/, "멤버"],
+    ]},
+    {base: "details-menu a,button,span", replaces: [
+        [/Your repositories/, "내 저장소"],
+        [/Your profile/, "내 프로필"],
+        [/Your GitHub profile/, "내 깃헙 프로필"],
+        [/Your projects/, "내 프로젝트"],
+        [/Your stars/, "내 스타"],
+        [/Your gists/, "내 기스트"],
+        [/Starred gists/, "스타 기스트"],
+        [/Help/, "도움말"],
+        [/Settings/, "설정"],
+        [/Sign out/, "로그아웃"],
+        [/Set your status/, "내 상태 설정"],
+        [/New repository/, "저장소 만들기"],
+        [/Import repository/, "저장소 가져오기"],
+        [/New gist/, "기스트 만들기"],
+        [/New organization/, "단체 만들기"],
+        [/New project/, "프로젝트 만들기"],
+
+    ]},
+    {base: "div.footer a", replaces: [
+        [/Terms/, "이용약관"],
+        [/Privacy/, "개인정보보호"],
+        [/Security/, "보안"],
+        [/Status/, "깃헙상태"],
+        [/Contact GitHub/, "깃헙에 연락"],
+        [/Pricing/, "가격"],
+        [/Training/, "교육"],
+        [/Blog/, "블로그"],
+        [/Shop/, "상점"],
+        [/Help/, "도움말"],
+        [/About/, "안내"],
+    ]},
+    {base: ".application-main h2", replaces: [
+        [/Popular repositories/, "인기 저장소"],
+        [/Repositories/, "저장소"]
+    ]},
+    {base: "div.js-repos-container button", replaces: [
+        [/Show more/, "더보기"]
+    ]},
+    {base: "#choose-pinned-repositories summary", replaces: [
+        [/Customize your pins/, "직접 고르기"]
+    ]},
+    {base: "nav.reponav span,a", replaces: [
+        [/Code/, "코드"],
+        [/Issues/, "이슈"],
+        [/Pull requests/, "풀 리퀘스트"],
+        [/Wiki/, "위키"],
+        [/Insights/, "통계"],
+        [/Settings/, "설정"]
+    ]},
+    {base: "ul.pagehead-actions span,button,summary", replaces: [
+        [/Watch/, "구독"],
+        [/Unwatch/, "구독취소"],
+        [/Star/, "스타"],
+        [/Unstar/, "스타취소"],
+        [/Fork/, "포크"]
+    ]},
+    {base: "summary i", replaces: [
+        [/Branch/, "브랜치"]
+    ]},
+    {base: 'form.js-site-search-form div', replaces: [
+        [/Jump to/, "이동"]
+    ]},
+    {base: '.file-navigation a,button,summary', replaces: [
+        [/New pull request/, "풀 리퀘스트 작성"],
+        [/Create new file/, "새 파일 만들기"],
+        [/Upload files/, "파일 업로드"],
+        [/Find File/, "파일 검색"],
+        [/Clone or download/, "클론 또는 다운로드"]
+    ]}
+];
+
+function 번역하기() {
+    const q = document.querySelectorAll.bind(document);
+    patterns.forEach(({ base, replaces }) => {
+        Array.from(q(base)).forEach(n => {
+            Array.from(n.childNodes).forEach(c => {
+                replaces.forEach(([패턴, 번역]) => {
+                    if (c.nodeType == 3 && 패턴.test(c.data)) {
+                        c.data = c.data.replace(패턴, 번역);
+                    }
+                });
+            });
+        });
     });
+    const 검색 = q('input[data-hotkey="s,/"]');
+    검색 && 검색[0] && (검색[0].placeholder = "검색 또는 찾아가기");
+}
 
-    Array.from($("details-menu a,button,span")).forEach(e => {
-        if (e.innerText.trim() == "Your repositories") {
-            e.innerText = "내 저장소";
-        } else if (e.innerText.trim() == "Your profile") {
-            e.innerText = "내 프로필";
-        } else if (e.innerText.trim() == "Your projects") {
-            e.innerText = "내 프로젝트";
-        } else if (e.innerText.trim() == "Your stars") {
-            e.innerText = "내 스타";
-        } else if (e.innerText.trim() == "Your gists") {
-            e.innerText = "내 기스트";
-        } else if (e.innerText.trim() == "Help") {
-            e.innerText = "도움말";
-        } else if (e.innerText.trim() == "Settings") {
-            e.innerText = "설정";
-        } else if (e.innerText.trim() == "Sign out") {
-            e.innerText = "로그아웃";
-        } else if (e.innerText.trim() == "Set your status") {
-            e.innerText = "내 상태 설정";
-        } 
-    });
-
-    Array.from($("div.footer a")).forEach(e => {
-        if (e.innerText.trim() == "Terms") {
-            e.innerText = "이용약관";
-        } else if (e.innerText.trim() == "Privacy") {
-            e.innerText = "개인정보보호";
-        } else if (e.innerText.trim() == "Security") {
-            e.innerText = "보안";
-        } else if (e.innerText.trim() == "Status") {
-            e.innerText = "깃헙상태";
-        } else if (e.innerText.trim() == "Contact GitHub") {
-            e.innerText = "깃헙에 연락";
-        } else if (e.innerText.trim() == "Pricing") {
-            e.innerText = "가격";
-        } else if (e.innerText.trim() == "Training") {
-            e.innerText = "교육";
-        } else if (e.innerText.trim() == "Blog") {
-            e.innerText = "블로그";
-        } else if (e.innerText.trim() == "Help") {
-            e.innerText = "도움말";
-        } else if (e.innerText.trim() == "About") {
-            e.innerText = "안내";
+window.addEventListener('load', () => {
+    번역하기();
+    const 관찰 = (e) => {
+        if (e) {
+            const observer = new MutationObserver(번역하기);
+            observer.observe(e, { attributes: false, childList: true, subtree: false });
         }
-
-    })
-
+    };
+    관찰(document.getElementById('js-pjax-container'));
+    관찰(document.getElementById('js-repo-pjax-container'));
 });
