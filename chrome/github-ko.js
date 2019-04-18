@@ -81,6 +81,19 @@ const patterns = [
         [/Upload files/, "파일 업로드"],
         [/Find File/, "파일 검색"],
         [/Clone or download/, "클론 또는 다운로드"]
+    ]},
+    {base: 'ul.numbers-summary li a', replaces: [
+        [/commit(s)?/, "커밋"],
+        [/branch(es)?/, "브랜치"],
+        [/release(s)?/, "릴리스"],
+        [/environment(s)?/, "배포환경"],
+        [/contributor(s)?/, "컨트리뷰터"],
+        [/View license/, "라이선스 보기"]
+    ]},
+    {base: 'table.files time-ago', replaces: [
+        [/([\d+]) months ago/, "$1달 전"],
+        [/([\d+]) years ago/, "$1년 전"],
+        [/([\d+]) days ago/, "$1일 전"]
     ]}
 ];
 
