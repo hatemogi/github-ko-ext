@@ -75,8 +75,14 @@ const patterns = [
         [/Settings/, "설정"]
     ]},
     {base: "ul.pagehead-actions span,button,summary", replaces: [
+        [/Not watching/, "구독 안 함"],
+        [/Watching/, "구독하기"],
         [/Watch/, "구독"],
+        [/Releases only/, "릴리스만 구독"],
+        [/Unwatch releases/, "릴리스 구독취소"],
         [/Unwatch/, "구독취소"],
+        [/Stop ignoring/, "그만 무시하기"],
+        [/Ignoring/, "무시하기"],
         [/Star/, "스타"],
         [/Unstar/, "스타취소"],
         [/Fork/, "포크"]
@@ -112,7 +118,8 @@ const patterns = [
     ]},
     {base: '.dashboard relative-time', replaces: 시간번역},
     {base: 'span.select-menu-title', replaces: [
-        [/Switch branches\/tags/, "브랜치나 태그 전환"]
+        [/Switch branches\/tags/, "브랜치나 태그 전환"],
+        [/Notifications/, "알림"]
     ]},
     {base: 'li.select-menu-tab button', replaces: [
         [/Branches/, "브랜치"],
