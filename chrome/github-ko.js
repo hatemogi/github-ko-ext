@@ -1,3 +1,16 @@
+const 시간번역 = [
+    [/([\d+]) months ago/, "$1달 전"],
+    [/([\d+]) years ago/, "$1년 전"],
+    [/an year ago/, "1년 전"],
+    [/([\d+]) days ago/, "$1일 전"],
+    [/a day ago/, "하루 전"],
+    [/([\d+]) hours ago/, "$1시간 전"],
+    [/an hour ago/, "1시간 전"],
+    [/([\d+]) minutes ago/, "$1분 전"],
+    [/a minute ago/, "1분 전"],
+    [/just now/, "방금"]
+];
+
 const patterns = [
     {base: "nav a", replaces: [
         [/Repositories/, "저장소"],
@@ -93,20 +106,17 @@ const patterns = [
         [/contributor(s)?/, "컨트리뷰터"],
         [/View license/, "라이선스 보기"]
     ]},
-    {base: 'table.files time-ago', replaces: [
-        [/([\d+]) months ago/, "$1달 전"],
-        [/([\d+]) years ago/, "$1년 전"],
-        [/an year ago/, "1년 전"],
-        [/([\d+]) days ago/, "$1일 전"],
-        [/a day ago/, "하루 전"],
-        [/([\d+]) hours ago/, "$1시간 전"],
-        [/an hour ago/, "1시간 전"],
-        [/([\d+]) minutes ago/, "$1분 전"],
-        [/a minute ago/, "1분 전"],
-        [/just now/, "방금"]
-    ]},
+    {base: 'table.files time-ago', replaces: 시간번역},
     {base: '.h-card h2', replaces: [
         [/Organizations/, "단체"]
+    ]},
+    {base: '.dashboard relative-time', replaces: 시간번역},
+    {base: 'span.select-menu-title', replaces: [
+        [/Switch branches\/tags/, "브랜치나 태그 전환"]
+    ]},
+    {base: 'li.select-menu-tab button', replaces: [
+        [/Branches/, "브랜치"],
+        [/Tags/, "태그"]
     ]}
 ];
 
@@ -127,17 +137,10 @@ function 번역하기() {
     검색 && 검색[0] && (검색[0].placeholder = "검색 또는 찾아가기");
 }
 
-window.addEventListener('load', () => {
+window.addEventListener('load', 번역하기);
+
+chrome.runtime.onMessage.addListener(function(message, sender, response) {
+    console.log("got message", message);
     번역하기();
-    const 관찰 = (e) => {
-        if (e) {
-            const observer = new MutationObserver(() => {
-                번역하기();
-                setTimeout(번역하기, 1000);
-            });
-            observer.observe(e, { attributes: false, childList: true });
-        }
-    };
-    관찰(document.getElementById('js-pjax-container'));
-    관찰(document.getElementById('js-repo-pjax-container'));
+    response("done");
 });
