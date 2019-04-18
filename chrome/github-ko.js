@@ -10,7 +10,7 @@ const patterns = [
         [/Stars/, "스타"],
         [/Followers/, "팔로워"],
         [/Following/, "팔로잉"],
-        [/People/, "멤버"],
+        [/People/, "멤버"]
     ]},
     {base: "details-menu a,button,span", replaces: [
         [/Your repositories/, "내 저장소"],
@@ -28,8 +28,7 @@ const patterns = [
         [/Import repository/, "저장소 가져오기"],
         [/New gist/, "기스트 만들기"],
         [/New organization/, "단체 만들기"],
-        [/New project/, "프로젝트 만들기"],
-
+        [/New project/, "프로젝트 만들기"]
     ]},
     {base: "div.footer a", replaces: [
         [/Terms/, "이용약관"],
@@ -42,7 +41,7 @@ const patterns = [
         [/Blog/, "블로그"],
         [/Shop/, "상점"],
         [/Help/, "도움말"],
-        [/About/, "안내"],
+        [/About/, "안내"]
     ]},
     {base: ".application-main h2", replaces: [
         [/Popular repositories/, "인기 저장소"],
@@ -75,11 +74,15 @@ const patterns = [
     {base: 'form.js-site-search-form div', replaces: [
         [/Jump to/, "이동"]
     ]},
-    {base: '.file-navigation a,button,summary', replaces: [
+    {base: '.file-navigation,.repository-content a,button,summary,clipboard-copy', replaces: [
         [/New pull request/, "풀 리퀘스트 작성"],
         [/Create new file/, "새 파일 만들기"],
         [/Upload files/, "파일 업로드"],
-        [/Find File/, "파일 검색"],
+        [/Find file/i, "파일 검색"],
+        [/Copy path/i, "경로 복사"],
+        [/Blame/, "블레임"],
+        [/Raw/, "원본"],
+        [/History/, "이력"],
         [/Clone or download/, "클론 또는 다운로드"]
     ]},
     {base: 'ul.numbers-summary li a', replaces: [
@@ -93,7 +96,17 @@ const patterns = [
     {base: 'table.files time-ago', replaces: [
         [/([\d+]) months ago/, "$1달 전"],
         [/([\d+]) years ago/, "$1년 전"],
-        [/([\d+]) days ago/, "$1일 전"]
+        [/an year ago/, "1년 전"],
+        [/([\d+]) days ago/, "$1일 전"],
+        [/a day ago/, "하루 전"],
+        [/([\d+]) hours ago/, "$1시간 전"],
+        [/an hour ago/, "1시간 전"],
+        [/([\d+]) minutes ago/, "$1분 전"],
+        [/a minute ago/, "1분 전"],
+        [/just now/, "방금"]
+    ]},
+    {base: '.h-card h2', replaces: [
+        [/Organizations/, "단체"]
     ]}
 ];
 
@@ -118,8 +131,11 @@ window.addEventListener('load', () => {
     번역하기();
     const 관찰 = (e) => {
         if (e) {
-            const observer = new MutationObserver(번역하기);
-            observer.observe(e, { attributes: false, childList: true, subtree: false });
+            const observer = new MutationObserver(() => {
+                번역하기();
+                setTimeout(번역하기, 1000);
+            });
+            observer.observe(e, { attributes: false, childList: true });
         }
     };
     관찰(document.getElementById('js-pjax-container'));
