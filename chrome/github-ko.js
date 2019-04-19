@@ -1,7 +1,7 @@
 const 시간번역 = [
     [/([\d+]) months ago/, "$1달 전"],
     [/([\d+]) years ago/, "$1년 전"],
-    [/an year ago/, "1년 전"],
+    [/a year ago/, "1년 전"],
     [/([\d+]) days ago/, "$1일 전"],
     [/a day ago/, "하루 전"],
     [/([\d+]) hours ago/, "$1시간 전"],
@@ -11,7 +11,7 @@ const 시간번역 = [
     [/just now/, "방금"]
 ];
 
-const patterns = [
+const textPatterns = [
     {base: "nav a", replaces: [
         [/Repositories/, "저장소"],
         [/Pull requests/, "풀 리퀘스트"],
@@ -60,8 +60,9 @@ const patterns = [
         [/Popular repositories/, "인기 저장소"],
         [/Repositories/, "저장소"]
     ]},
-    {base: "div.js-repos-container button", replaces: [
-        [/Show more/, "더보기"]
+    {base: "div.js-repos-container a,button", replaces: [
+        [/Show more/, "더보기"],
+        [/New/, "만들기"]
     ]},
     {base: "#choose-pinned-repositories summary", replaces: [
         [/Customize your pins/, "직접 고르기"]
@@ -127,9 +128,18 @@ const patterns = [
     ]}
 ];
 
+const placeholderPatterns = [
+    {base: 'input[data-hotkey="s,/"]', replaces: [
+        [/Search or jump to/, "검색 또는 찾아가기"]
+    ]},
+    {base: '.js-repos-container input[type="text"]', replaces: [
+        [/Find a repository/, "저장소 검색"]
+    ]}
+];
+
 function 번역하기() {
     const q = document.querySelectorAll.bind(document);
-    patterns.forEach(({ base, replaces }) => {
+    textPatterns.forEach(({ base, replaces }) => {
         Array.from(q(base)).forEach(n => {
             Array.from(n.childNodes).forEach(c => {
                 replaces.forEach(([패턴, 번역]) => {
@@ -140,8 +150,19 @@ function 번역하기() {
             });
         });
     });
+    placeholderPatterns.forEach(({ base, replaces }) => {
+        Array.from(q(base)).forEach(n => {
+            replaces.forEach(([패턴, 번역]) => {
+                if (패턴.test(c.placeholder)) {
+                    c.placeholder = c.placeholder.replace(패턴, 번역);
+                }
+            });
+        });
+    });
+    /*
     const 검색 = q('input[data-hotkey="s,/"]');
     검색 && 검색[0] && (검색[0].placeholder = "검색 또는 찾아가기");
+    */
 }
 
 window.addEventListener('load', 번역하기);
