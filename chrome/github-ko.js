@@ -16,7 +16,7 @@ const textPatterns = [
         [/Repositories/, "저장소"],
         [/Pull requests/, "풀 리퀘스트"],
         [/Issues/, "이슈"],
-        [/Marketplace/, "장터"],
+        [/Marketplace/, "마켓"],
         [/Explore/, "탐색"],
         [/Overview/, "개요"],
         [/Projects/, "프로젝트"],
@@ -25,7 +25,7 @@ const textPatterns = [
         [/Following/, "팔로잉"],
         [/People/, "멤버"]
     ]},
-    {base: "details-menu a,button,span", replaces: [
+    {base: "details-menu > a, details-menu > button, details-menu > span", replaces: [
         [/Your repositories/, "내 저장소"],
         [/Your profile/, "내 프로필"],
         [/Your GitHub profile/, "내 깃헙 프로필"],
@@ -56,18 +56,18 @@ const textPatterns = [
         [/Help/, "도움말"],
         [/About/, "안내"]
     ]},
-    {base: ".application-main h2", replaces: [
+    {base: ".application-main > h2", replaces: [
         [/Popular repositories/, "인기 저장소"],
         [/Repositories/, "저장소"]
     ]},
-    {base: "div.js-repos-container a,button", replaces: [
+    {base: "div.js-repos-container > a, div.js-repos-container > button", replaces: [
         [/Show more/, "더보기"],
-        [/New/, "만들기"]
+        [/New /, "만들기 "]
     ]},
-    {base: "#choose-pinned-repositories summary", replaces: [
+    {base: "#choose-pinned-repositories > summary", replaces: [
         [/Customize your pins/, "직접 고르기"]
     ]},
-    {base: "nav.reponav span,a", replaces: [
+    {base: "nav.reponav span, nav.reponav a", replaces: [
         [/Code/, "코드"],
         [/Issues/, "이슈"],
         [/Pull requests/, "풀 리퀘스트"],
@@ -75,7 +75,7 @@ const textPatterns = [
         [/Insights/, "통계"],
         [/Settings/, "설정"]
     ]},
-    {base: "ul.pagehead-actions span,button,summary", replaces: [
+    {base: "ul.pagehead-actions span, ul.pagehead-actions button, ul.pagehead-actions summary", replaces: [
         [/Not watching/, "구독 안 함"],
         [/Watching/, "구독하기"],
         [/Watch/, "구독"],
@@ -88,13 +88,15 @@ const textPatterns = [
         [/Unstar/, "스타취소"],
         [/Fork/, "포크"]
     ]},
-    {base: "summary i", replaces: [
+    {base: "summary > i", replaces: [
         [/Branch/, "브랜치"]
     ]},
-    {base: 'form.js-site-search-form div', replaces: [
+    {base: 'form.js-site-search-form > div', replaces: [
         [/Jump to/, "이동"]
     ]},
-    {base: '.file-navigation,.repository-content a,button,summary,clipboard-copy', replaces: [
+    {base: '.file-navigation a, .file-navigation button, .file-navigation summary, .file-navigation clipboard-copy,' +
+            '.repositor-content a, .repositor-content button, .repositor-content summary, .repositor-content clipboard-copy', 
+        replaces: [
         [/New pull request/, "풀 리퀘스트 작성"],
         [/Create new file/, "새 파일 만들기"],
         [/Upload files/, "파일 업로드"],
@@ -125,6 +127,25 @@ const textPatterns = [
     {base: 'li.select-menu-tab button', replaces: [
         [/Branches/, "브랜치"],
         [/Tags/, "태그"]
+    ]},
+    {base: '.paginate-container a, .paginate-container button', replaces: [
+        [/Previous/, "이전"],
+        [/Next/, "다음"]
+    ]},
+    {base: 'summary.select-menu-button i, summary.select-menu-button span', replaces: [
+        [/Language:/, "언어:"],
+        [/Type:/, "종류:"],
+        [/All/, "전체"],
+        [/Public/, "공개"],
+        [/Private/, "개인"],
+        [/Sources/, "원본"],
+        [/Forks/, "포크"],
+        [/Archived/, "아카이브"],
+        [/Mirrors/, "미러"]
+    ]},
+    {base: 'span.select-menu-title', replaces: [
+        [/Select type/, "종류 선택"],
+        [/Select language/, "언어 선택"]
     ]}
 ];
 
@@ -132,7 +153,7 @@ const placeholderPatterns = [
     {base: 'input[data-hotkey="s,/"]', replaces: [
         [/Search or jump to/, "검색 또는 찾아가기"]
     ]},
-    {base: '.js-repos-container input[type="text"]', replaces: [
+    {base: 'input[type="search"]', replaces: [
         [/Find a repository/, "저장소 검색"]
     ]}
 ];
@@ -141,20 +162,22 @@ function 번역하기() {
     const q = document.querySelectorAll.bind(document);
     textPatterns.forEach(({ base, replaces }) => {
         Array.from(q(base)).forEach(n => {
-            Array.from(n.childNodes).forEach(c => {
-                replaces.forEach(([패턴, 번역]) => {
-                    if (c.nodeType == 3 && 패턴.test(c.data)) {
-                        c.data = c.data.replace(패턴, 번역);
-                    }
+            Array.from(n.childNodes)
+                .filter(c => c.parentNode == n)
+                .forEach(c => {
+                    replaces.forEach(([패턴, 번역]) => {
+                        if (c.nodeType == 3 && 패턴.test(c.data)) {
+                            c.data = c.data.replace(패턴, 번역);
+                        }
+                    });
                 });
-            });
         });
     });
     placeholderPatterns.forEach(({ base, replaces }) => {
         Array.from(q(base)).forEach(n => {
             replaces.forEach(([패턴, 번역]) => {
-                if (패턴.test(c.placeholder)) {
-                    c.placeholder = c.placeholder.replace(패턴, 번역);
+                if (패턴.test(n.placeholder)) {
+                    n.placeholder = n.placeholder.replace(패턴, 번역);
                 }
             });
         });
@@ -169,6 +192,8 @@ window.addEventListener('load', 번역하기);
 
 chrome.runtime.onMessage.addListener(function(message, sender, response) {
     console.log("got message", message);
-    번역하기();
+    if (message.action == "onCompleted") {
+        번역하기();
+    }
     response("done");
 });

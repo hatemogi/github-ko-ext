@@ -9,7 +9,7 @@
     "scripts": ["background.js"]
   },
   "content_scripts": [{
-    "matches": ["https://*.github.com/*"],
+    "matches": ["https://*.github.com/*", "https://github.nhnent.com/*"],
     "css": ["github-ko.css"],
     "js": ["github-ko.js"]}],
   "permissions": ["tabs", "background", "webRequest", "*://*.github.com/"],
