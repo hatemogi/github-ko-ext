@@ -1,5 +1,6 @@
 const 시간번역 = [
     [/([\d+]) months ago/, "$1달 전"],
+    [/a month ago/, "한달 전"],
     [/([\d+]) years ago/, "$1년 전"],
     [/a year ago/, "1년 전"],
     [/([\d+]) days ago/, "$1일 전"],
@@ -25,7 +26,7 @@ const textPatterns = [
         [/Following/, "팔로잉"],
         [/People/, "멤버"]
     ]},
-    {base: "details-menu > a, details-menu > button, details-menu > span", replaces: [
+    {base: "details-menu a, details-menu button, details-menu span", replaces: [
         [/Your repositories/, "내 저장소"],
         [/Your profile/, "내 프로필"],
         [/Your GitHub profile/, "내 깃헙 프로필"],
@@ -72,6 +73,7 @@ const textPatterns = [
         [/Issues/, "이슈"],
         [/Pull requests/, "풀 리퀘스트"],
         [/Wiki/, "위키"],
+        [/Security/, "보안"],
         [/Insights/, "통계"],
         [/Settings/, "설정"]
     ]},
