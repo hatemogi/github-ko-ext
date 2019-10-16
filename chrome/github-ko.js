@@ -5,6 +5,7 @@ const 시간번역 = [
     [/a year ago/, "1년 전"],
     [/([\d+]) days ago/, "$1일 전"],
     [/a day ago/, "하루 전"],
+    [/yesterday/, "어제"],
     [/([\d+]) hours ago/, "$1시간 전"],
     [/an hour ago/, "1시간 전"],
     [/([\d+]) minutes ago/, "$1분 전"],
@@ -21,6 +22,7 @@ const textPatterns = [
         [/Explore/, "탐색"],
         [/Overview/, "개요"],
         [/Projects/, "프로젝트"],
+        [/Packages/, "패키지"],
         [/Stars/, "스타"],
         [/Followers/, "팔로워"],
         [/Following/, "팔로잉"],
@@ -57,7 +59,7 @@ const textPatterns = [
         [/Help/, "도움말"],
         [/About/, "안내"]
     ]},
-    {base: ".application-main > h2", replaces: [
+    {base: ".application-main h2", replaces: [
         [/Popular repositories/, "인기 저장소"],
         [/Repositories/, "저장소"]
     ]},
@@ -97,7 +99,7 @@ const textPatterns = [
         [/Jump to/, "이동"]
     ]},
     {base: '.file-navigation a, .file-navigation button, .file-navigation summary, .file-navigation clipboard-copy,' +
-            '.repositor-content a, .repositor-content button, .repositor-content summary, .repositor-content clipboard-copy', 
+            '.repositor-content a, .repositor-content button, .repositor-content summary, .repositor-content clipboard-copy',
         replaces: [
         [/New pull request/, "풀 리퀘스트 작성"],
         [/Create new file/, "새 파일 만들기"],
@@ -148,6 +150,16 @@ const textPatterns = [
     {base: 'span.select-menu-title', replaces: [
         [/Select type/, "종류 선택"],
         [/Select language/, "언어 선택"]
+    ]},
+    {base: '.js-yearly-contributions h2', replaces: [
+        [/(\d+) contributions in the last year/, '작년에 $1건 공헌'],
+        [/(\d+) contributions\s+in\s+(\d+)/m, '$2년에 $1건 공헌']
+    ]},
+    {base: '#js-contribution-activity h2', replaces: [
+        [/Contribution activity/, '공헌 활동']
+    ]},
+    {base: '.ajax-pagination-form button', replaces: [
+        [/Show more activity/, "활동 더 보기"]
     ]}
 ];
 

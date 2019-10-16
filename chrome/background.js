@@ -9,21 +9,18 @@ function sendMessage(data) {
 }
 
 chrome.webRequest.onBeforeRequest.addListener(function(details) {
-    console.log(["onBeforeRequest", details]);
     if (details.type == "xmlhttprequest" && details.method == "GET") {
         sendMessage({ action: "onBeforeRequest", requestId: details.requestId });
     }
 }, { urls: ["*://*.github.com/*"] });
 
 chrome.webRequest.onErrorOccurred.addListener(function (details) {
-    console.debug(details);
     if (details.type == "xmlhttprequest" && details.method == "GET") {
         sendMessage({ action: "onErrorOccurred", requestId: details.requestId });
     }
 }, { urls: ["*://*.github.com/*"] });
 
 chrome.webRequest.onCompleted.addListener(function(details) {
-    console.debug(details);
     if (details.type == "xmlhttprequest" && details.method == "GET") {
         sendMessage({ action: "onCompleted", requestId: details.requestId });
     }
