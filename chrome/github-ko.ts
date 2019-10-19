@@ -109,6 +109,7 @@ const 번역목록: 번역정보[] = [
                                         [/Help/, "도움말"],
                                         [/Settings/, "설정"]]),
     번역("0301H", "details-menu button", [[/Feature preview/, "신기능 미리보기"], [/Sign out/, "로그아웃"]]),
+
     번역("0400A", ".dashboard-sidebar h2", [[/Repositories/, "저장소"]]),
     번역("0400B", ".dashboard-sidebar h2 a", [[/New/, "만들기"]]),
     번역("0400C", ".dashboard-sidebar input[type=text]", [[/Find a repository/, "저장소 검색"]], 바탕값변환),
@@ -120,6 +121,10 @@ const 번역목록: 번역정보[] = [
     번역("0400I", "#dashboard button", [[/Follow/, "팔로우"], [/Star/, "스타"], [/Unstar/, "스타취소"]]),
     번역("0400J", "aside.team-left-column h2", [[/Explore repositories/, "추천 저장소"]]),
     번역("0400K", "aside.team-left-column a", [[/Explore more/, "더 살펴보기"]]),
+
+    번역("0401A", ".dashboard-sidebar details-menu span", [[/Switch dashboard context/, "대시보드 전환"],
+                                                           [/Manage organizations/, "단체 관리하기"],
+                                                           [/Create organization/, "단체 만들기"]]),
 
 ];
 

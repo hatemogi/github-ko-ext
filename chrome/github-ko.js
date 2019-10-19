@@ -105,6 +105,9 @@ var 번역목록 = [
     번역("0400I", "#dashboard button", [[/Follow/, "팔로우"], [/Star/, "스타"], [/Unstar/, "스타취소"]]),
     번역("0400J", "aside.team-left-column h2", [[/Explore repositories/, "추천 저장소"]]),
     번역("0400K", "aside.team-left-column a", [[/Explore more/, "더 살펴보기"]]),
+    번역("0401A", ".dashboard-sidebar details-menu span", [[/Switch dashboard context/, "다른 대시보드로"],
+        [/Manage organizations/, "단체 관리하기"],
+        [/Create organization/, "단체 만들기"]]),
 ];
 function 번역하기() {
     var startedAt = new Date().getTime();
