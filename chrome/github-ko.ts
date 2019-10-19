@@ -70,6 +70,7 @@ const 번역목록: 번역정보[] = [
     번역("0000E", ".auth-form-body input[type=submit]", [[/Sign in/, "로그인"]], 인풋값변환 ),
     번역("0000F", ".auth-form p", [[/New to GitHub\?/, "GitHub에 처음이신가요?"]]),
     번역("0000G", ".create-account-callout a", [[/Create an account/, "아이디 만들기"]]),
+    번역("0000H", ".footer li a", [[/Terms/, "이용약관"], [/Privacy/, "개인정보보호정책"], [/Security/, "보안"], [/Contact GitHub/, "GitHub에 연락"]])
 ];
 
 function 번역하기() {
