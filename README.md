@@ -6,6 +6,8 @@
 
 ## 스크린 샷
 
+<img src="https://github.com/hatemogi/github-ko-ext/blob/432ddd1d4cc23da5d960e7053ec04ddeb91b064a/screenshots/login.png?raw=true" width=300>
+
 ## 합리화
 
 현대 개발자는 버전 관리 도구 Git을 필수적으로 사용합니다. 더불어 리모트 저장소 서비스를 중심으로 개발 프로젝트 호스팅을 하고 있는 GitHub도 많이 쓰고 있습니다.
