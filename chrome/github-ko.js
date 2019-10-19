@@ -84,6 +84,8 @@ var 번역목록 = [
         [/New gist/, "기스트 만들기"],
         [/New organization/, "단체 만들기"],
         [/New project/, "새 프로젝트 만들기"]]),
+    번역("0300G", "details-menu span", [[/This repository/, "현재 저장소"]]),
+    번역("0300G", "details-menu > a", [[/New issue/, "새 이슈 쓰기"]]),
     번역("0301A", "details-menu a", [[/Signed in as/, "로그인 아이디:"]]),
     번역("0301B", "details-menu span", [[/Set status/, "상태 설정"]]),
     번역("0301C", "details-menu > a", [[/Your profile/, "내 프로필"],
