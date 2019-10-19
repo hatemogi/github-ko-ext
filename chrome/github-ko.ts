@@ -94,7 +94,9 @@ const 번역목록: 번역정보[] = [
 
     번역("0300A", "form.js-site-search-form input[name=q]", [[/Search or jump to/, "검색 또는 바로가기"]], 바탕값변환),
     번역("0300B", "header nav a", [[/Pull requests/, "풀 리퀘스트"], [/Issues/, "이슈"],
-                                    [/Marketplace/, "마켓"], [/Explore/, "탐색"]]),
+                                    [/Marketplace/, "마켓"], [/Explore/, "탐색"],
+                                    [/Dashboard/, "대시보드"], [/Sign out/, "로그아웃"]]),
+    번역("0300B", "header nav button", [[/Sign out/, "로그아웃"]]),
     번역("0300F", "details-menu > a", [[/New repository/, "저장소 만들기"],
                                         [/Import repository/, "저장소 가져오기"],
                                         [/New gist/, "기스트 만들기"],
