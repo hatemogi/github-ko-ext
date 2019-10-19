@@ -1,10 +1,16 @@
 {
   "manifest_version": 2,
   "name": "GitHub Translator - ko",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "GitHub 한글화",
-  "author": "https://github.com/hatemogi/github-ko",
-  "homepage_url": "https://github.com/hatemogi/github-ko",
+  "author": "https://github.com/hatemogi/github-ko-ext",
+  "homepage_url": "https://github.com/hatemogi/github-ko-ext",
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
   "background": {
     "scripts": ["background.js"]
   },
