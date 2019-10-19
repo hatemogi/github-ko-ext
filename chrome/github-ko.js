@@ -18,8 +18,10 @@ var 텍스트변환 = function (셀렉터, 패턴들) {
             if (c.parentNode == n && c.nodeType == 3) {
                 패턴들.forEach(function (_a) {
                     var 패턴 = _a[0], 번역 = _a[1];
-                    c.번역전 = c.data;
-                    c.data = c.data.replace(패턴, 번역);
+                    if (패턴.test(c.data)) {
+                        c.번역전 = c.data;
+                        c.data = c.data.replace(패턴, 번역);
+                    }
                 });
             }
         });
@@ -30,8 +32,10 @@ var 인풋값변환 = function (셀렉터, 패턴들) {
         if (n.tagName == 'INPUT') {
             패턴들.forEach(function (_a) {
                 var 패턴 = _a[0], 번역 = _a[1];
-                n.번역전 = n.value;
-                n.value = n.value.replace(패턴, 번역);
+                if (패턴.test(n.value)) {
+                    n.번역전 = n.value;
+                    n.value = n.value.replace(패턴, 번역);
+                }
             });
         }
     });
@@ -51,8 +55,8 @@ var 번역목록 = [
         [/Password/, "비밀번호"]]),
     번역("0000D", ".auth-form-body a", [[/Forgot password\?/, "비밀번호 찾기"]]),
     번역("0000E", ".auth-form-body input[type=submit]", [[/Sign in/, "로그인"]], 인풋값변환),
-    번역("0000", ".auth-form p", [[/New to GitHub\?/, "GitHub에 처음이신가요?"]]),
-    번역("0000", ".create-account-callout a", [[/Create an account/, "아이디 만들기"]]),
+    번역("0000F", ".auth-form p", [[/New to GitHub\?/, "GitHub에 처음이신가요?"]]),
+    번역("0000G", ".create-account-callout a", [[/Create an account/, "아이디 만들기"]]),
 ];
 function 번역하기() {
     번역목록.forEach(function (정보) {
