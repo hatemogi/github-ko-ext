@@ -83,6 +83,16 @@ var 번역목록 = [
         [/New gist/, "기스트 만들기"],
         [/New organization/, "단체 만들기"],
         [/New project/, "새 프로젝트 만들기"]]),
+    번역("0301A", "details-menu a", [[/Signed in as/, "로그인 아이디:"]]),
+    번역("0301B", "details-menu span", [[/Set status/, "상태 설정"]]),
+    번역("0301C", "details-menu > a", [[/Your profile/, "내 프로필"],
+        [/Your repositories/, "내 저장소"],
+        [/Your projects/, "내 프로젝트"],
+        [/Your stars/, "내 스타"],
+        [/Your gists/, "내 기스트"],
+        [/Help/, "도움말"],
+        [/Settings/, "설정"]]),
+    번역("0301H", "details-menu button", [[/Feature preview/, "신기능 미리보기"], [/Sign out/, "로그아웃"]]),
 ];
 function 번역하기() {
     번역목록.forEach(function (정보) {
