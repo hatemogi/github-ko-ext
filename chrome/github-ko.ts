@@ -14,6 +14,7 @@ const 시간패턴: 번역패턴[] = [
     [/an hour ago/, "1시간 전"],
     [/(\d+) minutes ago/, "$1분 전"],
     [/a minute ago/, "1분 전"],
+    [/(\d+) seconds ago/, "$1초 전"],
     [/just now/, "방금"]
 ];
 
