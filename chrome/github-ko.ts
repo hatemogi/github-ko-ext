@@ -2,16 +2,17 @@
 type 번역패턴 = [RegExp, string];
 
 const 시간패턴: 번역패턴[] = [
-    [/([\d+]) months ago/, "$1달 전"],
+    [/(\d+) months ago/, "$1달 전"],
     [/a month ago/, "한달 전"],
-    [/([\d+]) years ago/, "$1년 전"],
+    [/(\d+) years ago/, "$1년 전"],
     [/a year ago/, "1년 전"],
-    [/([\d+]) days ago/, "$1일 전"],
+    [/(\d+) days ago/, "$1일 전"],
     [/a day ago/, "하루 전"],
     [/yesterday/, "어제"],
-    [/([\d+]) hours ago/, "$1시간 전"],
+    [/(\d+) hours ago/, "$1시간 전"],
+    [/1 hour ago/, "1시간 전"],
     [/an hour ago/, "1시간 전"],
-    [/([\d+]) minutes ago/, "$1분 전"],
+    [/(\d+) minutes ago/, "$1분 전"],
     [/a minute ago/, "1분 전"],
     [/just now/, "방금"]
 ];
@@ -108,13 +109,27 @@ const 번역목록: 번역정보[] = [
                                         [/Help/, "도움말"],
                                         [/Settings/, "설정"]]),
     번역("0301H", "details-menu button", [[/Feature preview/, "신기능 미리보기"], [/Sign out/, "로그아웃"]]),
+    번역("0400A", ".dashboard-sidebar h2", [[/Repositories/, "저장소"]]),
+    번역("0400B", ".dashboard-sidebar h2 a", [[/New/, "만들기"]]),
+    번역("0400C", ".dashboard-sidebar input[type=text]", [[/Find a repository/, "저장소 검색"]], 바탕값변환),
+    번역("0400D", ".dashboard-sidebar button", [[/Show more/, "더 보기"]]),
+    번역("0400E", ".dashboard-sidebar h2", [[/Your teams/, "소속팀"]]),
+    번역("0400F", ".dashboard-sidebar p.notice", [[/You don’t belong to any teams yet/, "소속된 팀이 없습니다"]]),
+    번역("0400G", "#dashboard relative-time", 시간패턴),
+    번역("0400H", "#dashboard a", [[/(\d+) repositories/, "$1 저장소"], [/(\d+) followers/, "$1 팔로워"], [/(\d+) issue(s?) need(s?) help/, "도와줄 이슈 $1건"]]),
+    번역("0400I", "#dashboard button", [[/Follow/, "팔로우"], [/Star/, "스타"], [/Unstar/, "스타취소"]]),
+    번역("0400J", "aside.team-left-column h2", [[/Explore repositories/, "추천 저장소"]]),
+    번역("0400K", "aside.team-left-column a", [[/Explore more/, "더 살펴보기"]]),
 
 ];
 
 function 번역하기() {
+    const startedAt: number = new Date().getTime();
     번역목록.forEach((정보: 번역정보) => {
         정보.변환(정보.셀렉터, 정보.번역패턴들);
     });
+    const elapsed: number = new Date().getTime() - startedAt;
+    console.log(`번역시간: ${elapsed}ms`);
 }
 
 window.addEventListener('load', 번역하기);
