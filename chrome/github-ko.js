@@ -40,6 +40,19 @@ var 인풋값변환 = function (셀렉터, 패턴들) {
         }
     });
 };
+var 바탕값변환 = function (셀렉터, 패턴들) {
+    document.querySelectorAll(셀렉터).forEach(function (n) {
+        if (n.tagName == 'INPUT') {
+            패턴들.forEach(function (_a) {
+                var 패턴 = _a[0], 번역 = _a[1];
+                if (패턴.test(n.placeholder)) {
+                    n.번역전 = n.placeholder;
+                    n.placeholder = n.placeholder.replace(패턴, 번역);
+                }
+            });
+        }
+    });
+};
 function 번역(인덱스, 셀렉터, 패턴들, 변환) {
     if (변환 === void 0) { 변환 = 텍스트변환; }
     return {
@@ -57,7 +70,11 @@ var 번역목록 = [
     번역("0000E", ".auth-form-body input[type=submit]", [[/Sign in/, "로그인"]], 인풋값변환),
     번역("0000F", ".auth-form p", [[/New to GitHub\?/, "GitHub에 처음이신가요?"]]),
     번역("0000G", ".create-account-callout a", [[/Create an account/, "아이디 만들기"]]),
-    번역("0000H", ".footer li a", [[/Terms/, "이용약관"], [/Privacy/, "개인정보보호정책"], [/Security/, "보안"], [/Contact GitHub/, "GitHub에 연락"]])
+    번역("0000H", ".footer li a", [[/Terms/, "이용약관"], [/Privacy/, "개인정보보호정책"], [/Security/, "보안"], [/Contact GitHub/, "GitHub에 연락"]]),
+    번역("0100A", "#forgot_password_form h1", [[/Reset your password/, "비밀번호 초기화"]]),
+    번역("0100B", "#forgot_password_form label[for=email_field]", [[/Enter your email address .+\./, "이메일 주소를 입력하시면, 비밀번호를 초기화할 수 있는 링크를 보내드립니다."]]),
+    번역("0100C", "#forgot_password_form input[name=email]", [[/Enter your email address/, "비밀번호를 여기 적으세요"]], 바탕값변환),
+    번역("0100D", "#forgot_password_form input[type=submit]", [[/Send password reset email/, "비밀번호 초기화 이메일 보내기"]], 인풋값변환),
 ];
 function 번역하기() {
     번역목록.forEach(function (정보) {
