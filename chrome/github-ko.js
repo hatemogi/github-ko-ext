@@ -115,7 +115,8 @@ var 번역목록 = [
     번역("0600C", ".repohead .pagehead-actions button", [[/Star/, "스타"], [/Unstar/, "스타취소"]]),
     번역("0600D", ".repohead .pagehead-actions .btn", [[/Fork/, "포크"]]),
     번역("0600E", ".repohead a.reponav-item span", [[/Code/, "코드"], [/Issues/, "이슈"], [/Pull requests/, "풀리퀘스트"]]),
-    번역("0600H", ".repohead a.reponav-item", [[/Projects/, "프로젝트"], [/Security/, "보안"], [/Insights/, "인사이트"], [/Settings/, "설정"]]),
+    번역("0600H", ".repohead a.reponav-item", [[/Projects/, "프로젝트"], [/Wiki/, "위키"], [/Security/, "보안"],
+        [/Insights/, "인사이트"], [/Settings/, "설정"]]),
 ];
 function 번역하기() {
     var startedAt = new Date().getTime();
