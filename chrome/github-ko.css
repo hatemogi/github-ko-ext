@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "D2CodingEmbedded";
+  src: url('chrome-extension://__MSG_@@extension_id__/fonts/D2Coding.ttf');
+}
+
+/* GitHub */
+
+.blob-code-inner {
+  font-family: "D2CodingEmbedded" !important;
+  font-size: 13px !important;
+}
+
+.markdown-body pre, .markdown-body code {
+  font-family: "D2CodingEmbedded" !important;
+  font-size: 13px !important;
+}
