@@ -117,6 +117,22 @@ var 번역목록 = [
     번역("0600E", ".repohead a.reponav-item span", [[/Code/, "코드"], [/Issues/, "이슈"], [/Pull requests/, "풀리퀘스트"]]),
     번역("0600H", ".repohead a.reponav-item", [[/Projects/, "프로젝트"], [/Wiki/, "위키"], [/Security/, "보안"],
         [/Insights/, "인사이트"], [/Settings/, "설정"]]),
+    번역("0700A", ".repository-content summary em", [[/No description, website, or topics provided/, "설명, 웹사이트, 주제가 모두 없습니다."]]),
+    번역("0700B", ".repository-content summary span", [[/Manage topics/, "주제 관리"]]),
+    번역("0700C", ".repository-content span.btn", [[/Edit/, "편집"]]),
+    번역("0700D", ".repository-content .numbers-summary a", [[/commit(s?)/, "커밋"]]),
+    번역("0700E", ".repository-content .numbers-summary a", [[/branch(es)?/, "브랜치"]]),
+    번역("0700F", ".repository-content .numbers-summary a", [[/release(s?)/, "릴리스"]]),
+    번역("0700G", ".repository-content .file-navigation details i", [[/Branch/, "브랜치"]]),
+    번역("0700H", ".repository-content .file-navigation a", [[/New pull request/, "풀 리퀘스트 작성"]]),
+    번역("0700I", ".repository-content .file-navigation button", [[/Create new file/, "새 파일 작성"]]),
+    번역("0700J", ".repository-content .file-navigation a", [[/Upload files/, "파일 업로드"], [/Find file/, "파일 찾기"]]),
+    번역("0700L", ".repository-content .file-navigation summary.btn", [[/Clone or download/, "클론 또는 다운로드"]]),
+    번역("0700M", ".repository-content .commit-tease span", [[/Latest commit/, "최근 커밋"]]),
+    번역("0700M", ".repository-content .commit-tease relative-time", 시간패턴),
+    번역("0700N", ".repository-content .files time-ago", 시간패턴),
+    번역("0700O", ".repository-content .flash-messages .flash", [[/Add a README with an overview of your project/, "README 파일에 프로젝트 개요를 적어주세요"]]),
+    번역("0700P", ".repository-content .flash-messages .flash a", [[/Add a README/, "README 추가"]]),
 ];
 function 번역하기() {
     var startedAt = new Date().getTime();
