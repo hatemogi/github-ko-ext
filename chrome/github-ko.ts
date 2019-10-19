@@ -89,6 +89,16 @@ const 번역목록: 번역정보[] = [
     번역("0100B", "#forgot_password_form label[for=email_field]", [[/Enter your email address .+\./, "이메일 주소를 입력하시면, 비밀번호를 초기화할 수 있는 링크를 보내드립니다."]]),
     번역("0100C", "#forgot_password_form input[name=email]", [[/Enter your email address/, "비밀번호를 여기 적으세요"]], 바탕값변환),
     번역("0100D", "#forgot_password_form input[type=submit]", [[/Send password reset email/, "비밀번호 초기화 이메일 보내기"]], 인풋값변환),
+
+    번역("0300A", "form.js-site-search-form input[name=q]", [[/Search or jump to/, "검색 또는 바로가기"]], 바탕값변환),
+    번역("0300B", "header nav a", [[/Pull requests/, "풀 리퀘스트"], [/Issues/, "이슈"],
+                                    [/Marketplace/, "마켓"], [/Explore/, "탐색"]]),
+    번역("0300F", "details-menu > a", [[/New repository/, "저장소 만들기"],
+                                        [/Import repository/, "저장소 가져오기"],
+                                        [/New gist/, "기스트 만들기"],
+                                        [/New organization/, "단체 만들기"],
+                                        [/New project/, "새 프로젝트 만들기"]]),
+
 ];
 
 function 번역하기() {
