@@ -105,9 +105,17 @@ var 번역목록 = [
     번역("0400I", "#dashboard button", [[/Follow/, "팔로우"], [/Star/, "스타"], [/Unstar/, "스타취소"]]),
     번역("0400J", "aside.team-left-column h2", [[/Explore repositories/, "추천 저장소"]]),
     번역("0400K", "aside.team-left-column a", [[/Explore more/, "더 살펴보기"]]),
-    번역("0401A", ".dashboard-sidebar details-menu span", [[/Switch dashboard context/, "다른 대시보드로"],
+    번역("0401A", ".dashboard-sidebar details-menu span", [[/Switch dashboard context/, "대시보드 전환"],
         [/Manage organizations/, "단체 관리하기"],
         [/Create organization/, "단체 만들기"]]),
+    번역("0500A", ".footer li a", [[/Status/, "상태"], [/Help/, "도움말"], [/Pricing/, "가격정책"],
+        [/Training/, "교육"], [/Blog/, "블로그"], [/About/, "안내"]]),
+    번역("0600A", ".repohead h1 span", [[/Private/, "비공개"]]),
+    번역("0600B", ".repohead .pagehead-actions span[data-menu-button]", [[/Watch/, "구독"], [/Unwatch/, "구독취소"]]),
+    번역("0600C", ".repohead .pagehead-actions button", [[/Star/, "스타"], [/Unstar/, "스타취소"]]),
+    번역("0600D", ".repohead .pagehead-actions .btn", [[/Fork/, "포크"]]),
+    번역("0600E", ".repohead a.reponav-item span", [[/Code/, "코드"], [/Issues/, "이슈"], [/Pull requests/, "풀리퀘스트"]]),
+    번역("0600H", ".repohead a.reponav-item", [[/Projects/, "프로젝트"], [/Security/, "보안"], [/Insights/, "인사이트"], [/Settings/, "설정"]]),
 ];
 function 번역하기() {
     var startedAt = new Date().getTime();
