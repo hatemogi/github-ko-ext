@@ -6,7 +6,7 @@
 
 ## 스크린 샷
 
-<img src="https://github.com/hatemogi/github-ko-ext/blob/4384083f28a2479a69a697cc5255c0ca05d9b72c/screenshots/project.png?raw=true" width=800>
+<img src="https://github.com/hatemogi/github-ko-ext/blob/3fbd30d0ad7dd570e1f2476aab2ad9aa3a4d66a4/screenshots/project.png?raw=true">
 
 <img src="https://github.com/hatemogi/github-ko-ext/blob/4384083f28a2479a69a697cc5255c0ca05d9b72c/screenshots/webstore1.png?raw=true" width=800>
 
