@@ -1,7 +1,8 @@
 {
   "manifest_version": 2,
   "name": "GitHub 한글화",
-  "version": "0.1.2",
+  "short_name": "github_ko",
+  "version": "0.1.3",
   "description": "GitHub 사이트의 주요 부분을 한글로 표시해주는 확장 프로그램입니다.",
   "author": "https://github.com/hatemogi/github-ko-ext",
   "homepage_url": "https://github.com/hatemogi/github-ko-ext",

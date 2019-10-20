@@ -1,5 +1,5 @@
 function sendMessage(data) {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.query({ active: true, currentWindow: true, status: 'complete' }, function (tabs) {
         if (tabs && tabs.length > 0) {
             chrome.tabs.sendMessage(tabs[0].id, data, function (response) { });
         }

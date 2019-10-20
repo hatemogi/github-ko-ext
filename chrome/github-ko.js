@@ -75,7 +75,7 @@ var 번역목록 = [
     번역("0000H", ".footer li a", [[/Terms/, "이용약관"], [/Privacy/, "개인정보보호정책"], [/Security/, "보안"], [/Contact GitHub/, "GitHub에 연락"]]),
     번역("0100A", "#forgot_password_form h1", [[/Reset your password/, "비밀번호 초기화"]]),
     번역("0100B", "#forgot_password_form label[for=email_field]", [[/Enter your email address .+\./, "이메일 주소를 입력하시면, 비밀번호를 초기화할 수 있는 링크를 보내드립니다."]]),
-    번역("0100C", "#forgot_password_form input[name=email]", [[/Enter your email address/, "비밀번호를 여기 적으세요"]], 바탕값변환),
+    번역("0100C", "#forgot_password_form input[name=email]", [[/Enter your email address/, "이메일을 여기 적으세요"]], 바탕값변환),
     번역("0100D", "#forgot_password_form input[type=submit]", [[/Send password reset email/, "비밀번호 초기화 이메일 보내기"]], 인풋값변환),
     번역("0300A", "form.js-site-search-form input[name=q]", [[/Search or jump to/, "검색 또는 바로가기"]], 바탕값변환),
     번역("0300B", "header nav a", [[/Pull requests/, "풀 리퀘스트"], [/Issues/, "이슈"],
@@ -138,6 +138,14 @@ var 번역목록 = [
     번역("0700N", ".repository-content .files time-ago", 시간패턴),
     번역("0700O", ".repository-content .flash-messages .flash", [[/Add a README with an overview of your project/, "README 파일에 프로젝트 개요를 적어주세요"]]),
     번역("0700P", ".repository-content .flash-messages .flash a", [[/Add a README/, "README 추가"]]),
+    번역("0701A", ".file-navigation span.select-menu-title", [[/Switch branches\/tags/, "브랜치나 태그로 전환"]]),
+    번역("0701B", ".file-navigation tab-container input[type=text]", [[/Find or create a branch/, "브랜치 찾거나 만들기"]], 바탕값변환),
+    번역("0701C", ".file-navigation tab-container button", [[/Branches/, "브랜치"], [/Tags/, "태그"]]),
+    번역("0702A", ".file-navigation tab-container div", [[/Nothing to show/, "비어 있음"]]),
+    번역("0703A", ".clone-options h4", [[/Clone with HTTPS/, "HTTPS로 클론"]]),
+    번역("0703B", ".clone-options button", [[/Use SSH/, "SSH 사용"]]),
+    번역("0703C", ".clone-options p", [[/Use Git or checkout with SVN using the web URL/, "Git이나 SVN으로 체크아웃할 때 쓰는 웹 URL"]]),
+    번역("0703D", ".get-repo-modal-options a", [[/Open in Desktop/, "데스크탑으로 열기"], [/Download ZIP/, "ZIP으로 다운로드"]]),
 ];
 function 번역하기() {
     var startedAt = new Date().getTime();
@@ -147,11 +155,14 @@ function 번역하기() {
     var elapsed = new Date().getTime() - startedAt;
     console.log("\uBC88\uC5ED\uC2DC\uAC04: " + elapsed + "ms");
 }
-window.addEventListener('load', 번역하기);
 chrome.runtime.onMessage.addListener(function (message, sender, response) {
     console.log("got message", message);
     if (message.action == "onCompleted") {
         번역하기();
     }
     response("done");
+});
+window.addEventListener('load', 번역하기);
+window.addEventListener('onkeypress', function (key) {
+    console.log("key = $key");
 });

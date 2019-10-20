@@ -1,4 +1,3 @@
-
 type 번역패턴 = [RegExp, string];
 
 const 시간패턴: 번역패턴[] = [
@@ -156,6 +155,17 @@ const 번역목록: 번역정보[] = [
     번역("0700N", ".repository-content .files time-ago", 시간패턴),
     번역("0700O", ".repository-content .flash-messages .flash", [[/Add a README with an overview of your project/, "README 파일에 프로젝트 개요를 적어주세요"]]),
     번역("0700P", ".repository-content .flash-messages .flash a", [[/Add a README/, "README 추가"]]),
+
+    번역("0701A", ".file-navigation span.select-menu-title", [[/Switch branches\/tags/, "브랜치나 태그로 전환"]]),
+    번역("0701B", ".file-navigation tab-container input[type=text]", [[/Find or create a branch/, "브랜치 찾거나 만들기"]], 바탕값변환),
+    번역("0701C", ".file-navigation tab-container button", [[/Branches/, "브랜치"], [/Tags/, "태그"]]),
+    번역("0702A", ".file-navigation tab-container div", [[/Nothing to show/, "비어 있음"]]),
+
+    번역("0703A", ".clone-options h4", [[/Clone with HTTPS/, "HTTPS로 클론"]]),
+    번역("0703B", ".clone-options button", [[/Use SSH/, "SSH 사용"]]),
+    번역("0703C", ".clone-options p", [[/Use Git or checkout with SVN using the web URL/, "Git이나 SVN으로 체크아웃할 때 쓰는 웹 URL"]]),
+    번역("0703D", ".get-repo-modal-options a", [[/Open in Desktop/, "데스크탑으로 열기"], [/Download ZIP/, "ZIP으로 다운로드"]]),
+
 ];
 
 function 번역하기() {
@@ -167,14 +177,14 @@ function 번역하기() {
     console.log(`번역시간: ${elapsed}ms`);
 }
 
-window.addEventListener('load', 번역하기);
-
 declare var chrome: any;
 
-chrome.runtime.onMessage.addListener(function(message: any, sender: any, response: any) {
+chrome.runtime.onMessage.addListener(function (message: any, sender: any, response: any) {
     console.log("got message", message);
     if (message.action == "onCompleted") {
         번역하기();
     }
     response("done");
 });
+
+window.addEventListener('load', 번역하기);

@@ -6,7 +6,7 @@
 
 ## 스크린 샷
 
-<img src="https://github.com/hatemogi/github-ko-ext/blob/432ddd1d4cc23da5d960e7053ec04ddeb91b064a/screenshots/login.png?raw=true" width=300>
+<img src="https://github.com/hatemogi/github-ko-ext/blob/432ddd1d4cc23da5d960e7053ec04ddeb91b064a/screenshots/login.png?raw=true" width=400>
 
 ## 합리화
 
