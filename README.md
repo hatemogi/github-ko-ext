@@ -2,13 +2,13 @@
 
 > "개발자가 자주 쓰는 GitHub 웹사이트를 한글화 하면 친숙해서 좋지 않을까?"
 
-위 질문에서 시작한 실험 프로젝트입니다. 실제로 한글화를 해보고 직접 써봐서 그 답을 찾아보고자 합니다.
+위 질문에서 시작한 실험 프로젝트입니다. 실제로 한글화를 해보고 직접 써봐서 그 답을 찾아보고자 합니다. GitHub을 한글화하는 크롬 확장 프로그램을 개발해 공개하였습니다.
 
 ## 스크린 샷
 
 <img src="https://github.com/hatemogi/github-ko-ext/blob/3fbd30d0ad7dd570e1f2476aab2ad9aa3a4d66a4/screenshots/project.png?raw=true">
 
-<img src="https://github.com/hatemogi/github-ko-ext/blob/4384083f28a2479a69a697cc5255c0ca05d9b72c/screenshots/webstore1.png?raw=true" width=800>
+<img src="https://github.com/hatemogi/github-ko-ext/blob/4384083f28a2479a69a697cc5255c0ca05d9b72c/screenshots/webstore1.png?raw=true">
 
 ## 합리화
 
