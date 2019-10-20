@@ -6,7 +6,9 @@
 
 ## 스크린 샷
 
-<img src="https://github.com/hatemogi/github-ko-ext/blob/432ddd1d4cc23da5d960e7053ec04ddeb91b064a/screenshots/login.png?raw=true" width=400>
+<img src="https://github.com/hatemogi/github-ko-ext/blob/4384083f28a2479a69a697cc5255c0ca05d9b72c/screenshots/project.png?raw=true" width=800>
+
+<img src="https://github.com/hatemogi/github-ko-ext/blob/4384083f28a2479a69a697cc5255c0ca05d9b72c/screenshots/webstore1.png?raw=true" width=800>
 
 ## 합리화
 
