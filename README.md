@@ -8,7 +8,7 @@
 
 <img src="https://github.com/hatemogi/github-ko-ext/blob/3fbd30d0ad7dd570e1f2476aab2ad9aa3a4d66a4/screenshots/project.png?raw=true">
 
-<img src="https://github.com/hatemogi/github-ko-ext/blob/4384083f28a2479a69a697cc5255c0ca05d9b72c/screenshots/webstore1.png?raw=true">
+GitHub 한글화 크롬 확장 프로그램을 설치한 뒤, 평소 이용하는 GitHub에 방문하시면 한글로 번역되어 표시됩니다.
 
 ## 합리화
 
