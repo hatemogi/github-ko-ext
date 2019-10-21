@@ -39,7 +39,7 @@ GitHub 한글화 크롬 확장 프로그램을 설치한 뒤, 평소 이용하�
 
 릴리스에서 최종 버전을 받아 적당한 위치에 압축을 푼 다음, 크롬 확장 프로그램 <chrome://extensions>에서 "개발자 모드"를 켜신(ON)다음, "압축 해제된 확장 프로그램 로드"를 눌러 조금 전 압축을 풀어 놓은 디렉터리를 지정하시면, "GitHub 한글화" 확장 프로그램이 설치되며, 이 이후 깃헙에 방문하시면 주요 페이지들이 한글로 보이는 것을 확인하실 수 있습니다.
 
-<img src="https://github.com/hatemogi/github-ko-ext/blob/3fbd30d0ad7dd570e1f2476aab2ad9aa3a4d66a4/screenshots/project.png?raw=true">
+<img src="https://github.com/hatemogi/github-ko-ext/blob/940f21b34ef0a3e1416004bd192bbe1b51a60b54/screenshots/manual-install.png?raw=true">
 
 ## 어떻게 동작하는가?
 
