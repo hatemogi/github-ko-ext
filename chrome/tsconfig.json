@@ -5,7 +5,12 @@
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "sourceMap": true
+        "target": "es6",
+        "lib": [
+            "es2019",
+            "dom",
+            "esnext.array"
+        ]
     },
     "files": [
         "github-ko.ts"

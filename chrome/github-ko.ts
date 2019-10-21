@@ -26,46 +26,37 @@ interface 번역정보 {
     변환: 변환;
 }
 
-const 텍스트변환: 변환 = function(셀렉터: string, 패턴들: 번역패턴[]) {
-    document.querySelectorAll(셀렉터).forEach((n: HTMLElement) => {
-        n.childNodes.forEach((c: any) => {
-            if (c.parentNode == n && c.nodeType == 3) {
-                패턴들.forEach(([패턴, 번역]: 번역패턴) => {
-                    if (패턴.test(c.data)) {
-                        c.번역전 = c.data;
-                        c.data = c.data.replace(패턴, 번역);
-                    }
-                });
-            }
+function 변환함수(선택함수: (es: Array<Element>) => Array<any>,
+                속성키: string): 변환 {
+    return (셀렉터: string, 패턴들: 번역패턴[]) => {
+        const 노드 = Array.from(document.querySelectorAll(셀렉터));
+        선택함수(노드).forEach(해당노드 => {
+            패턴들.forEach(([패턴, 번역]: 번역패턴) => {
+                let 원문 = 해당노드[속성키];
+                if (패턴.test(원문)) {
+                    해당노드.번역전 = 원문;
+                    해당노드[속성키] = 원문.replace(패턴, 번역);
+                }
+            });
         });
-    });
+    }
 }
 
-const 인풋값변환: 변환 = function(셀렉터: string, 패턴들: 번역패턴[]) {
-    document.querySelectorAll(셀렉터).forEach((n: any) => {
-        if (n.tagName == 'INPUT') {
-            패턴들.forEach(([패턴, 번역]: 번역패턴) => {
-                if (패턴.test(n.value)) {
-                    n.번역전 = n.value;
-                    n.value = n.value.replace(패턴, 번역);
-                }
-            });
-        }
-    });
-}
+const 텍스트변환: 변환 = 변환함수(
+    // 하위 노드 중 텍스트 노드만 처리
+    (es) => es.flatMap(e =>
+        Array.from(e.childNodes).filter(c => c.parentNode == e && c.nodeType == 3)),
+    "data");
 
-const 바탕값변환: 변환 = function(셀렉터: string, 패턴들: 번역패턴[]) {
-    document.querySelectorAll(셀렉터).forEach((n: any) => {
-        if (n.tagName == 'INPUT') {
-            패턴들.forEach(([패턴, 번역]: 번역패턴) => {
-                if (패턴.test(n.placeholder)) {
-                    n.번역전 = n.placeholder;
-                    n.placeholder = n.placeholder.replace(패턴, 번역);
-                }
-            });
-        }
-    });
-}
+const 인풋값변환: 변환 = 변환함수(
+    // INPUT 노드만 처리
+    (es) => es.filter(e => e.tagName == 'INPUT'),
+    "value");
+
+const 바탕값변환: 변환 = 변환함수(
+    // INPUT 노드만 처리
+    (es) => es.filter(e => e.tagName == 'INPUT'),
+    "placeholder");
 
 function 번역(인덱스: string, 셀렉터: string, 패턴들: 번역패턴[], 변환: 변환 = 텍스트변환): 번역정보 {
     return {
@@ -180,7 +171,7 @@ function 번역하기() {
 declare var chrome: any;
 
 chrome.runtime.onMessage.addListener(function (message: any, sender: any, response: any) {
-    console.log("got message", message);
+    // console.log("got message", message);
     if (message.action == "onCompleted") {
         번역하기();
     }
