@@ -31,15 +31,17 @@ GitHub 한글화 크롬 확장 프로그램을 설치한 뒤, 평소 이용하�
 
 * 1차 목표 - 깃헙 사이트에 적용해 쓸 수 있는 크롬 확장 프로그램을 구글 스토어에 공개
 * 현재  7개 화면 번역 완료
-* 크롬 웹 스토어 리뷰 중 (등록 거절 상태)
 
 ## 이용 방법
 
-크롬 웹 스토어에 등록되면, 여느 확장 프로그램과 같은 방법으로 설치하실 수 있습니다. 다만, 아직 리뷰가 진행 중이라 웹 스토어에 보이지 않고 있으며, 그 사이 동안에는 수동으로 설치해서 실험해 보실 수 있습니다.
+크롬 웹 스토어에 등록되면, 여느 확장 프로그램과 같은 방법으로 설치하실 수 있습니다.
 
-[릴리스에서 최종 버전](https://github.com/hatemogi/github-ko-ext/releases/tag/0.1.4)을 받아 적당한 위치에 압축을 푼 다음, 크롬 확장 프로그램  관리 화면(메뉴 > 창 > 확장 프로그램)에서 "개발자 모드"를 켜신(ON)다음, "압축 해제된 확장 프로그램 로드"를 눌러 조금 전 압축을 풀어 놓은 디렉터리를 지정하시면, "GitHub 한글화" 확장 프로그램이 설치되며, 이 이후 깃헙에 방문하시면 주요 페이지들이 한글로 보이는 것을 확인하실 수 있습니다.
+![](screenshots/chrome-webstore.png)
 
-<img src="https://github.com/hatemogi/github-ko-ext/blob/940f21b34ef0a3e1416004bd192bbe1b51a60b54/screenshots/manual-install.png?raw=true">
+[크롬 웹 스토어 - GitHub 한글화 설치하러 가기](https://chrome.google.com/webstore/detail/github-%ED%95%9C%EA%B8%80%ED%99%94/phhgannnkapemfnciphmbpenaflbngmm)
+
+위 확장 프로그램 페이지에서 "Chrome에 추가" 버튼을 누르시면 설치되며, 설치 후 평소처럼 GitHub에 방문하시면 됩니다.
+
 
 ## 어떻게 동작하는가?
 
