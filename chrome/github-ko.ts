@@ -12,7 +12,7 @@ const 시간패턴: 번역패턴[] = [
     [/1 hour ago/, "1시간 전"],
     [/an hour ago/, "1시간 전"],
     [/(\d+) minutes ago/, "$1분 전"],
-    [/a minute ago/, "1분 전"],
+    [/(a|1) minute ago/, "1분 전"],
     [/(\d+) seconds ago/, "$1초 전"],
     [/just now/, "방금"]
 ];
@@ -126,7 +126,7 @@ const 번역목록: 번역정보[] = [
     번역("0600A", ".repohead h1 span", [[/Private/, "비공개"]]),
     번역("0600B", ".repohead .pagehead-actions span[data-menu-button]", [[/Watch/, "구독"], [/Unwatch/, "구독 취소"]]),
     번역("0600C", ".repohead .pagehead-actions button", [[/Star/, "스타"], [/Unstar/, "스타 취소"]]),
-    번역("0600D", ".repohead .pagehead-actions .btn", [[/Fork/, "포크"]]),
+    번역("0600D", ".repohead .pagehead-actions .btn", [[/Fork/, "포크"], [/Sponsor/, "후원"]]),
     번역("0600E", ".repohead a.reponav-item span", [[/Code/, "코드"], [/Issues/, "이슈"], [/Pull requests/, "풀 리퀘스트"]]),
     번역("0600H", ".repohead a.reponav-item", [[/Projects/, "프로젝트"], [/Wiki/, "위키"], [/Security/, "보안"],
                                                [/Insights/, "인사이트"], [/Settings/, "설정"]]),
@@ -144,7 +144,8 @@ const 번역목록: 번역정보[] = [
     번역("0700C", ".repository-content span.btn", [[/Edit/, "편집"]]),
     번역("0700D", ".repository-content .numbers-summary a", [[/commit(s?)/, "커밋"]]),
     번역("0700E", ".repository-content .numbers-summary a", [[/branch(es)?/, "브랜치"]]),
-    번역("0700F", ".repository-content .numbers-summary a", [[/release(s?)/, "릴리스"], [/contributor(s?)/, "컨트리뷰터"]]),
+    번역("0700F", ".repository-content .numbers-summary a", [[/release(s?)/, "릴리스"], [/contributor(s?)/, "컨트리뷰터"],
+                                                             [/environment(s?)/, "환경"], [/View license/, "라이선스 보기"]]),
     번역("0700G", ".repository-content .file-navigation details i", [[/Branch/, "브랜치"]]),
     번역("0700H", ".repository-content .file-navigation a", [[/New pull request/, "새 풀 리퀘스트 작성"]]),
     번역("0700I", ".repository-content .file-navigation button", [[/Create new file/, "새 파일 작성"]]),
