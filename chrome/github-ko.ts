@@ -137,7 +137,7 @@ const 번역목록: 번역정보[] = [
     번역("0700E", ".repository-content .numbers-summary a", [[/branch(es)?/, "브랜치"]]),
     번역("0700F", ".repository-content .numbers-summary a", [[/release(s?)/, "릴리스"], [/contributor(s?)/, "컨트리뷰터"]]),
     번역("0700G", ".repository-content .file-navigation details i", [[/Branch/, "브랜치"]]),
-    번역("0700H", ".repository-content .file-navigation a", [[/New pull request/, "풀 리퀘스트 작성"]]),
+    번역("0700H", ".repository-content .file-navigation a", [[/New pull request/, "새 풀 리퀘스트 작성"]]),
     번역("0700I", ".repository-content .file-navigation button", [[/Create new file/, "새 파일 작성"]]),
     번역("0700J", ".repository-content .file-navigation a", [[/Upload files/, "파일 업로드"], [/Find file/, "파일 찾기"]]),
     번역("0700L", ".repository-content .file-navigation summary.btn", [[/Clone or download/, "클론 또는 다운로드"]]),
