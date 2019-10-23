@@ -130,6 +130,15 @@ const 번역목록: 번역정보[] = [
     번역("0600E", ".repohead a.reponav-item span", [[/Code/, "코드"], [/Issues/, "이슈"], [/Pull requests/, "풀 리퀘스트"]]),
     번역("0600H", ".repohead a.reponav-item", [[/Projects/, "프로젝트"], [/Wiki/, "위키"], [/Security/, "보안"],
                                                [/Insights/, "인사이트"], [/Settings/, "설정"]]),
+
+    번역("0601A", ".repohead .pagehead-actions .select-menu-modal span", [[/Notifications/, "알림 설정"], [/Not watching/, "구독 해지"],
+        [/Releases only/, "릴리스만 알림"], [/^\s*Watching\s*$/, "구독"], [/Ignoring/, "알리지 않음"]]),
+    번역("0601C", ".repohead .pagehead-actions .select-menu-modal span.description",
+        [[/Be notified only when participating or @mentioned/, "참여 중이거나 @멘션됐을 때만 알리기"],
+         [/Be notified of new releases, and when participating or @mentioned/, "새 릴리스를 알리고, 참여 중 또는 @멘션됐을 때도 알림"],
+         [/Be notified of all conversations/, "모두 알림"],
+         [/Never be notified/, "아무것도 알리지 않기"]]),
+
     번역("0700A", ".repository-content summary em", [[/No description, website, or topics provided/, "설명, 웹사이트, 주제가 모두 없습니다."]]),
     번역("0700B", ".repository-content summary span", [[/Manage topics/, "주제 관리"]]),
     번역("0700C", ".repository-content span.btn", [[/Edit/, "편집"]]),
