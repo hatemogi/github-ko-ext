@@ -178,4 +178,26 @@ chrome.runtime.onMessage.addListener(function (message: any, sender: any, respon
     response("done");
 });
 
-window.addEventListener('load', 번역하기);
+window.addEventListener('load', function () {
+  번역하기();
+
+  function 시간요소검사(): Boolean {
+    const 시간요소 = document.querySelectorAll('[datetime]');
+    const 정규식 = /[a-z]/i;
+
+    for (let i = 0; i < 시간요소.length; i++) {
+      if (
+        정규식.test(시간요소[i].innerHTML)
+      ) return true;
+    }
+
+    return false;
+  }
+
+  setInterval(() => {
+    if (시간요소검사()) {
+      console.log("날짜 데이터 변화감지, 다시 번역중...");
+      번역하기();
+    }
+  }, 50);
+});
