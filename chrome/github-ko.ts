@@ -27,36 +27,55 @@ interface 번역정보 {
 }
 
 function 변환함수(선택함수: (es: Array<Element>) => Array<any>,
-                속성키: string): 변환 {
+                  속성변환: (노드: any, 번역패턴: 번역패턴) => void): 변환 {
     return (셀렉터: string, 패턴들: 번역패턴[]) => {
         const 노드 = Array.from(document.querySelectorAll(셀렉터));
         선택함수(노드).forEach(해당노드 => {
-            패턴들.forEach(([패턴, 번역]: 번역패턴) => {
-                let 원문 = 해당노드[속성키];
-                if (패턴.test(원문)) {
-                    해당노드.번역전 = 원문;
-                    해당노드[속성키] = 원문.replace(패턴, 번역);
-                }
+            패턴들.forEach((번역패턴) => {
+                속성변환(해당노드, 번역패턴);
             });
         });
     }
+}
+
+function 속성변환(속성명: string) {
+    return (노드: any, [패턴, 번역]: 번역패턴) => {
+        let 원문 = 노드[속성명];
+        if (패턴.test(원문)) {
+            노드.원문 = 원문;
+            노드[속성명] = 원문.replace(패턴, 번역);
+        }
+    };
 }
 
 const 텍스트변환: 변환 = 변환함수(
     // 하위 노드 중 텍스트 노드만 처리
     (es) => es.flatMap(e =>
         Array.from(e.childNodes).filter(c => c.parentNode == e && c.nodeType == 3)),
-    "data");
+    속성변환("data"));
 
 const 인풋값변환: 변환 = 변환함수(
     // INPUT 노드만 처리
     (es) => es.filter(e => e.tagName == 'INPUT'),
-    "value");
+    속성변환("value"));
 
 const 바탕값변환: 변환 = 변환함수(
     // INPUT 노드만 처리
     (es) => es.filter(e => e.tagName == 'INPUT'),
-    "placeholder");
+    속성변환("placeholder"));
+
+const 비활성변환: 변환 = 변환함수(
+    // INPUT 노드만 처리
+    (es) => es.filter(e => e.tagName == 'INPUT'),
+    (노드: any, [패턴, 번역]: 번역패턴) => {
+        if (노드.dataset && 노드.dataset.disableWith) {
+            let 원문 = 노드.dataset.disableWith;
+            if (패턴.test(원문)) {
+                노드.dataset.disableWith = 원문.replace(패턴, 번역);
+            }
+        }
+    });
+
 
 function 번역(인덱스: string, 셀렉터: string, 패턴들: 번역패턴[], 변환: 변환 = 텍스트변환): 번역정보 {
     return {
@@ -72,10 +91,12 @@ const 번역목록: 번역정보[] = [
     번역("0000B", ".auth-form-body > label", [[/Username or email address/, "아이디 또는 이메일 주소"],
                                               [/Password/, "비밀번호"]]),
     번역("0000D", ".auth-form-body a", [[/Forgot password\?/, "비밀번호 찾기"]]),
-    번역("0000E", ".auth-form-body input[type=submit]", [[/Sign in/, "로그인"]], 인풋값변환 ),
+    번역("0000E", ".auth-form-body input[type=submit]", [[/Sign in/, "로그인"]], 인풋값변환),
     번역("0000F", ".auth-form p", [[/New to GitHub\?/, "GitHub에 처음이신가요?"]]),
     번역("0000G", ".create-account-callout a", [[/Create an account/, "아이디 만들기"]]),
     번역("0000H", ".footer li a", [[/Terms/, "이용약관"], [/Privacy/, "개인정보보호정책"], [/Security/, "보안"], [/Contact GitHub/, "GitHub에 연락"]]),
+    번역("0000I", ".auth-form .flash .container", [[/Incorrect username or password/, "아이디가 없거나 비밀번호가 틀립니다"]]),
+    번역("0000J", ".auth-form-body input[type=submit]", [[/Signing in/, "로그인 중"]], 비활성변환),
 
     번역("0100A", "#forgot_password_form h1", [[/Reset your password/, "비밀번호 초기화"]]),
     번역("0100B", "#forgot_password_form label[for=email_field]", [[/Enter your email address .+\./, "이메일 주소를 입력하시면, 비밀번호를 초기화할 수 있는 링크를 보내드립니다."]]),
