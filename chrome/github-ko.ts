@@ -188,6 +188,17 @@ const 번역목록: 번역정보[] = [
     번역("0703C", ".clone-options p", [[/Use Git or checkout with SVN using the web URL/, "Git이나 SVN으로 체크아웃할 때 쓰는 웹 URL"]]),
     번역("0703D", ".get-repo-modal-options a", [[/Open in Desktop/, "데스크탑으로 열기"], [/Download ZIP/, "ZIP으로 다운로드"]]),
 
+    번역("0800A", ".repository-content .btn", [[/^(\s*)Filters(\s*)$/, "$1필터$2"]]),
+    번역("0800B", ".repository-content a", [[/Labels/, "라벨"], [/Milestones/, "마일스톤"], [/New issue/, "새 이슈"]]),
+
+    번역("0802A", ".repository-content .states a", [[/Open/, "열림"], [/Closed/, "닫힘"]]),
+    번역("0802B", ".repository-content summary", [[/Author/, "작성자"], [/Labels/, "라벨"], [/Projects/, "프로젝트"],
+                                                  [/Milestones/, "마일스톤"], [/Assignee/, "담당자"], [/Sort/, "정렬"]]),
+    번역("0802C", ".repository-content .js-issue-row span.opened-by", [[/opened/, "열림"], [/^(\s*)by(\s*)$/, "$1작성자: $2"],
+                                                                       [/was closed/, "닫음"]]),
+    번역("0802D", ".repository-content .js-issue-row relative-time", 시간패턴),
+    번역("0802E", ".repository-content a.issues-reset-query", [[/Clear current search query, filters, and sorts/, "현재 검색, 필터, 정렬 조건을 제거"]])
+
 ];
 
 function 번역하기() {
