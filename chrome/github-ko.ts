@@ -197,7 +197,26 @@ const 번역목록: 번역정보[] = [
     번역("0802C", ".repository-content .js-issue-row span.opened-by", [[/opened/, "열림"], [/^(\s*)by(\s*)$/, "$1작성자: $2"],
                                                                        [/was closed/, "닫음"]]),
     번역("0802D", ".repository-content .js-issue-row relative-time", 시간패턴),
-    번역("0802E", ".repository-content a.issues-reset-query", [[/Clear current search query, filters, and sorts/, "현재 검색, 필터, 정렬 조건을 제거"]])
+    번역("0802E", ".repository-content a.issues-reset-query", [[/Clear current search query, filters, and sorts/, "현재 검색, 필터, 정렬 조건을 제거"]]),
+
+    번역("0900A", ".repository-content #js-issues-search", [[/Search all labels/, "모든 라벨 검색"]], 바탕값변환),
+    번역("0900B", ".repository-content button", [[/New label/, "새 라벨"]]),
+    번역("0900C", ".repository-content span.js-labels-label", [[/^(\s*)labels(\s*)$/, "$1라벨$2"]]),
+    번역("0900D", ".repository-content .js-label-list a.js-label-link span", [
+        [/^(\s*)bug(\s*)$/, "$1버그$2"], [/^(\s*)duplicate(\s*)$/, "$1중복$2"], [/^(\s*)enhancement(\s*)$/, "$1개선$2"],
+        [/^(\s*)good first issue(\s*)$/, "$1좋은 첫 이슈$2"], [/^(\s*)help wanted(\s*)$/, "$1도움필요$2"], [/^(\s*)invalid(\s*)$/, "$1부적절$2"],
+        [/^(\s*)question(\s*)$/, "$1질문$2"], [/^(\s*)wontfix(\s*)$/, "$1진행안함$2"]]),
+    번역("0900E", ".repository-content .js-label-list span", [
+        [/Something isn't working/, "잘 안 되는 게 있음"],
+        [/This issue or pull request already exists/, "해당 이슈나 풀 리퀘스트가 이미 있음"],
+        [/New feature or request/, "새 기능 또는 요청"],
+        [/Good for newcomers/, "새로 온 사람에게 좋음"],
+        [/Extra attention is needed/, "각별한 주의 필요"],
+        [/This doesn't seem right/, "이건 적절치 못함"],
+        [/Further information is requested/, "추가 정보 필요"],
+        [/This will not be worked on/, "이건 진행하지 않음"]]),
+    번역("0900F", ".repository-content .js-label-list button", [
+        [/^(\s*)Edit(\s*)$/, "$1편집$2"], [/^(\s*)Delete(\s*)$/, "$1삭제$2"]]),
 
 ];
 
