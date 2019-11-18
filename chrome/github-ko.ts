@@ -150,7 +150,7 @@ const 번역목록: 번역정보[] = [
     번역("0600D", ".repohead .pagehead-actions .btn", [[/Fork/, "포크"], [/Sponsor/, "후원"]]),
     번역("0600E", ".repohead a.reponav-item span", [[/Code/, "코드"], [/Issues/, "이슈"], [/Pull requests/, "풀 리퀘스트"]]),
     번역("0600H", ".repohead a.reponav-item", [[/Projects/, "프로젝트"], [/Wiki/, "위키"], [/Security/, "보안"],
-                                               [/Insights/, "인사이트"], [/Settings/, "설정"]]),
+                                               [/Insights/, "인사이트"], [/Settings/, "설정"], [/Actions/, "액션"]]),
 
     번역("0601A", ".repohead .pagehead-actions .select-menu-modal span", [[/Notifications/, "알림 설정"], [/Not watching/, "구독 해지"],
         [/Releases only/, "릴리스만 알림"], [/^\s*Watching\s*$/, "구독"], [/Ignoring/, "알리지 않음"]]),
@@ -217,7 +217,12 @@ const 번역목록: 번역정보[] = [
         [/This will not be worked on/, "이건 진행하지 않음"]]),
     번역("0900F", ".repository-content .js-label-list button", [
         [/^(\s*)Edit(\s*)$/, "$1편집$2"], [/^(\s*)Delete(\s*)$/, "$1삭제$2"]]),
-
+    번역("0901A", ".repository-content details-menu .select-menu-title", [[/Sort/, "정렬"]]),
+    번역("0901B", ".repository-content details-menu .select-menu-item-text", [
+        [/Alphabetically/, "알파벳순"],
+        [/Reverse alphabetically/, "알파벳순 거꾸로"],
+        [/Most issues/, "이슈 많은 순서로"],
+        [/Fewest issues/, "이슈 적은 순서로"]]),
 ];
 
 function 번역하기() {
