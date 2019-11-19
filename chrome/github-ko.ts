@@ -223,6 +223,19 @@ const 번역목록: 번역정보[] = [
         [/Reverse alphabetically/, "알파벳순 거꾸로"],
         [/Most issues/, "이슈 많은 순서로"],
         [/Fewest issues/, "이슈 적은 순서로"]]),
+    번역("1000A", ".repository-content a.btn-primary", [
+        [/New milestone/, "새 마일스톤"], [/Create a Milestone/, "마일스톤 만들기"]]),
+    번역("1000B", ".repository-content h3", [[/You haven’t created any Milestones/, "마일스톤을 아직 만들지 않으셨네요"]]),
+    번역("1000C", ".repository-content p", [
+        [/Use Milestones to create collections of Issues and Pull Requests for a particular release or project/,
+        "마일스톤으로 특정 프로젝트나 릴리스를 위한 이슈나 풀 리퀘스트 묶어서 관리하세요"]]),
+    번역("1000D", ".repository-content details-menu .select-menu-item-text", [
+        [/Recently updated/, "최근 업데이트순"],
+        [/Furthest due date/, "마감일 먼 순서"],
+        [/Closest due date/, "마감일 가까운 순서"],
+        [/Least complete/, "덜 끝난 순서"],
+        [/Most complete/, "많이 끝난 순서"],
+        [/Least issues/, "이슈 적은 순서로"]]),
 ];
 
 function 번역하기() {
@@ -239,7 +252,7 @@ declare var chrome: any;
 chrome.runtime.onMessage.addListener(function (message: any, sender: any, response: any) {
     // console.log("got message", message);
     if (message.action == "onCompleted") {
-        번역하기();
+        setTimeout(번역하기, 0);
     }
     response("done");
 });
