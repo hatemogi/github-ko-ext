@@ -26,9 +26,9 @@ interface 번역정보 {
     변환: 변환;
 }
 
-function 변환함수(선택함수: (es: Array<Element>) => Array<any>,
-                  속성변환: (노드: any, 번역패턴: 번역패턴) => void): 변환 {
-    return (셀렉터: string, 패턴들: 번역패턴[]) => {
+function 변환함수<T>(선택함수: (es: Element[]) => T[],
+                     속성변환: (노드: T, 번역패턴: 번역패턴) => void): 변환 {
+    return (셀렉터, 패턴들) => {
         const 노드 = Array.from(document.querySelectorAll(셀렉터));
         선택함수(노드).forEach(해당노드 => {
             패턴들.forEach((번역패턴) => {
@@ -38,36 +38,35 @@ function 변환함수(선택함수: (es: Array<Element>) => Array<any>,
     }
 }
 
-function 속성변환(속성명: string) {
-    return (노드: any, [패턴, 번역]: 번역패턴) => {
-        let 원문 = 노드[속성명];
-        if (패턴.test(원문)) {
-            노드.원문 = 원문;
-            노드[속성명] = 원문.replace(패턴, 번역);
+function 속성변환<T>(읽기: (n: T) => string, 쓰기: (n: T, s: string) => void) {
+    return (노드: T, [패턴, 번역]: 번역패턴) => {
+        const 원문 = 읽기(노드);
+        if (원문 && 패턴.test(원문)) {
+            쓰기(노드, 원문.replace(패턴, 번역));
         }
     };
 }
 
-const 텍스트변환: 변환 = 변환함수(
+const 텍스트변환: 변환 = 변환함수<Text>(
     // 하위 노드 중 텍스트 노드만 처리
-    (es) => es.flatMap(e =>
-        Array.from(e.childNodes).filter(c => c.parentNode == e && c.nodeType == 3)),
-    속성변환("data"));
+    (es) => es.flatMap(e => Array.from(e.childNodes).filter(c => c.parentNode == e && c.nodeType == 3))
+              .map(t => t as Text),
+    속성변환(n => n.data, (n, s) => n.data = s));
 
-const 인풋값변환: 변환 = 변환함수(
+const 인풋값변환: 변환 = 변환함수<HTMLInputElement>(
     // INPUT 노드만 처리
-    (es) => es.filter(e => e.tagName == 'INPUT'),
-    속성변환("value"));
+    (es) => es.filter(e => e.tagName == 'INPUT') as HTMLInputElement[],
+    속성변환(i => i.value, (i, s) => i.value = s));
 
-const 바탕값변환: 변환 = 변환함수(
+const 바탕값변환: 변환 = 변환함수<HTMLInputElement>(
     // INPUT 노드만 처리
-    (es) => es.filter(e => e.tagName == 'INPUT'),
-    속성변환("placeholder"));
+    (es) => es.filter(e => e.tagName == 'INPUT') as HTMLInputElement[],
+    속성변환(i => i.placeholder, (i, s) => i.placeholder = s));
 
 const 비활성변환: 변환 = 변환함수(
     // INPUT 노드만 처리
-    (es) => es.filter(e => e.tagName == 'INPUT'),
-    (노드: any, [패턴, 번역]: 번역패턴) => {
+    (es) => es.filter(e => e.tagName == 'INPUT') as HTMLInputElement[],
+    (노드, [패턴, 번역]) => {
         if (노드.dataset && 노드.dataset.disableWith) {
             let 원문 = 노드.dataset.disableWith;
             if (패턴.test(원문)) {
@@ -166,7 +165,8 @@ const 번역목록: 번역정보[] = [
     번역("0700D", ".repository-content .numbers-summary a", [[/commit(s?)/, "커밋"]]),
     번역("0700E", ".repository-content .numbers-summary a", [[/branch(es)?/, "브랜치"]]),
     번역("0700F", ".repository-content .numbers-summary a", [[/release(s?)/, "릴리스"], [/contributor(s?)/, "컨트리뷰터"],
-                                                             [/environment(s?)/, "환경"], [/View license/, "라이선스 보기"]]),
+                                                             [/environment(s?)/, "환경"], [/View license/, "라이선스 보기"],
+                                                             [/package(s?)/, "패키지"]]),
     번역("0700G", ".repository-content .file-navigation details i", [[/Branch/, "브랜치"]]),
     번역("0700H", ".repository-content .file-navigation a", [[/New pull request/, "새 풀 리퀘스트 작성"]]),
     번역("0700I", ".repository-content .file-navigation button", [[/Create new file/, "새 파일 작성"]]),
