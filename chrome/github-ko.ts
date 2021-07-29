@@ -142,7 +142,7 @@ const 번역목록: 번역정보[] = [
     번역("0400K", "aside.team-left-column a", [[/Explore more/, "더 살펴보기"]]),
     번역("0400L", ".dashboard-feed", [[/introduece yourself/, "자기소개를 해보세요"]]),
     번역("0400M", ".dashboard-feed", [[/The easiest way to introduce yourself on Github is by creating a README in a repository about you! You can start here/, "깃허브에서 여러분 자신을 소개하는 가장 쉬운 방법은 저장소에서 당신에 대한 리드미 파일을 만드는 것입니다! 이렇게 시작해보세요 :"]]),
-    번역("0400N", ".dashboard-feed", [[/Discover interesting projects and people to populate your personal news feed/, "흥미로운 프로젝트들과 당신의 개인 뉴스피드를 채울 새로운 사람들을 찾아보세요"]]),
+    번역("0400N", ".dashboard-feed", [[/Discover interesting projects and people to populate your personal news feed/, "흥미로운 프로젝트들과 사람들을 찾아 개인 뉴스피드를 채워보세요."]]),
 
     번역("0401A", ".dashboard-sidebar details-menu span", [[/Switch dashboard context/, "대시보드 전환"],
                                                            [/Manage organizations/, "단체 관리하기"],
