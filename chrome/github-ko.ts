@@ -103,7 +103,7 @@ const 번역목록: 번역정보[] = [
     번역("0100D", "#forgot_password_form input[type=submit]", [[/Send password reset email/, "비밀번호 초기화 이메일 보내기"]], 인풋값변환),
 
     번역("0300A", "form.js-site-search-form input[name=q]", [[/Search or jump to/, "검색 또는 바로가기"]], 바탕값변환),
-    번역("0300B", "header nav a", [[/Pull requests/, "풀리퀘스트"], [/Issues/, "이슈"],
+    번역("0300B", "header nav a", [[/Pull requests/, "풀 리퀘스트"], [/Issues/, "이슈"],
                                     [/Marketplace/, "마켓"], [/Explore/, "탐색"],
                                     [/Dashboard/, "대시보드"], [/Sign out/, "로그아웃"]]),
     번역("0300B", "header nav button", [[/Sign out/, "로그아웃"]]),
@@ -141,8 +141,6 @@ const 번역목록: 번역정보[] = [
     번역("0400J", "aside.team-left-column h2", [[/Explore repositories/, "추천 저장소"]]),
     번역("0400K", "aside.team-left-column a", [[/Explore more/, "더 살펴보기"]]),
     번역("0400L", ".dashboard-feed", [[/introduece yourself/, "자기소개를 해보세요"]]),
-    번역("0400M", ".dashboard-feed", [[/The easiest way to introduce yourself on Github is by creating a README in a repository about you! You can start here/, "깃허브에서 여러분 자신을 소개하는 가장 쉬운 방법은 저장소에서 당신에 대한 리드미 파일을 만드는 것입니다! 이렇게 시작해보세요 :"]]),
-    번역("0400N", ".dashboard-feed", [[/Discover interesting projects and people to populate your personal news feed/, "흥미로운 프로젝트들과 사람들을 찾아 개인 뉴스피드를 채워보세요."]]),
 
     번역("0401A", ".dashboard-sidebar details-menu span", [[/Switch dashboard context/, "대시보드 전환"],
                                                            [/Manage organizations/, "단체 관리하기"],
@@ -243,6 +241,29 @@ const 번역목록: 번역정보[] = [
         [/Least complete/, "덜 끝난 순서"],
         [/Most complete/, "많이 끝난 순서"],
         [/Least issues/, "이슈 적은 순서로"]]),
+    번역("1100A", ".menu.position-relative span", [[/Account settings/, "계정 설정"]]),
+    번역("1100B", ".menu.position-relative a", [[/Profile/, "프로필"],
+                                                [/Account/, "계정"],
+                                                [/Appearance/, "테마"],
+                                                [/Account security/, "계정 보안"],
+                                                [/Billing & plans/, "결제 및 플랜"],
+                                                [/Security log/, "보안 로그"],
+                                                [/Security & analysis/, "보안 분석"],
+                                                [/Emails/, "이메일"],
+                                                [/Notifications/, "알림"],
+                                                [/SSH and GPG keys/, "SSH와 GPG키"],
+                                                [/Repositories/, "저장소"],
+                                                [/Packages/, "패키지"],
+                                                [/Organizations/, "조직"],
+                                                [/Saved replies/, "저장된 댓글"],
+                                                [/Applications/, "애플리케이션"]]),
+    번역("1100C", ".menu a", [[/Developer settings/, "개발자 설정"]]),
+    번역("1100C", ".menu span", [[/Moderation settings/, "중재 설정"]]),
+    번역("1100C", ".menu > a", [[/Blocked users/, "차단된 유저"]]),
+    번역("1100D", ".menu > a", [[/Interaction limits/, "상호작용 제한"]]),
+    번역("1100E", ".public-profile-heading", [[/Public profile/, "공개 프로필"]]),
+
+    번역("1200A", ".container-lg.mx-auto.p-responsive a", [[/Explore/, "탐색"], [/Topics/, "주제"], [/Trending/, "트렌드"], [/Collections/, "컬렉션"], [/Events/, "이벤트"], [/GitHub Sponsors/, "깃허브 스폰서"]]),
 ];
 
 function 번역하기() {
