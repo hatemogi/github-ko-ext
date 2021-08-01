@@ -261,9 +261,11 @@ const 번역목록: 번역정보[] = [
     번역("1100C", ".menu span", [[/Moderation settings/, "중재 설정"]]),
     번역("1100C", ".menu > a", [[/Blocked users/, "차단된 유저"]]),
     번역("1100D", ".menu > a", [[/Interaction limits/, "상호작용 제한"]]),
-    번역("1100E", ".public-profile-heading", [[/Public profile/, "공개 프로필"]]),
-
-    번역("1200A", ".container-lg.mx-auto.p-responsive a", [[/Explore/, "탐색"], [/Topics/, "주제"], [/Trending/, "트렌드"], [/Collections/, "컬렉션"], [/Events/, "이벤트"], [/GitHub Sponsors/, "깃허브 스폰서"]]),
+    번역("1200A", ".container-lg.mx-auto.p-responsive a", [[/Explore/, "탐색"], [/Topics/, "주제"], [/Trending/, "트렌드"], [/Collections/, "컬렉션"], [/Events/, "이벤트"], [/GitHub Sponsors/, "깃허브 스폰서"], [/Get email updates/, "이메일 업데이트"]]),
+    번역("1200B", ".border-top.px-3 a", [[/starred topics/, "스타받은 토픽"]]),
+    번역("1200C", ".border-top.p-3 a", [[/starred repository/, "스타받은 저장소"]]),
+    번역("1200D", ".Box-header.d-flex a", [[/Trending repositories/, "뜨고있는 저장소들"], [/Trending developers/, "뜨고있는 개발자들"]]),
+    번역("1200E", ".col-md-8.col-lg-6.py-4 h1", [[/Here's what we found based on your interests/, "당신의 관심사를 기반으로 찾은 내용은 다음과 같습니다"]]),
 ];
 
 function 번역하기() {
