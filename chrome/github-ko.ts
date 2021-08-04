@@ -261,17 +261,27 @@ const 번역목록: 번역정보[] = [
     번역("1100C", ".menu span", [[/Moderation settings/, "중재 설정"]]),
     번역("1100C", ".menu > a", [[/Blocked users/, "차단된 유저"]]),
     번역("1100E", ".col-md-9.col-12 h2", [[/Public profile/, "공개 프로필"], [/Change username/, "계정명 변경"], [/Export account data/, "계정 데이터 내보내기"], [/Successor settings/, "후속 설정"], [/Theme preferences/, "선호 테마 선택하기"]]),
-    번역("1100F", ".col-12.col-md-8", [[/Name/, "이름"], [/Public email/, "공개 이메일"], [/Twitter username/, "트위터 계정명"]]),
     번역("1100G", ".col-12.col-md-4 label", [[/Profile picture/, "프로필 사진"]]),
-    번역("1100I", ".col-md-9.col-12 summary", [[/Change username/, "계정명 변경"]]),
-    번역("1100J", ".col-md-9.col-12 p", [[/Looking to manage account security settings/, "계정 보안 설정을 관리하는 법을 찾고 계신가요?"], [/Export all repositories and profile metadata for/, "다음 계정에 대한 모든 저장소와 메타데이터를 내보냅니다 : "], [/Exports will be available for 7 days/, "내보내기는 7일간 유효합니다"]
-    , [/Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes./, "GitHub가 어떻게 보이게할 지 선택해주세요. 단일 테마를 선택하거나 시스템과 동기화하고 낮/밤 테마를 자동 전환하도록 할 수 있습니다"]]),
+    번역("1100H", ".col-md-9.col-12 summary", [[/Change username/, "계정명 변경"]]),
+    번역("1100I", ".col-md-9.col-12 p", [[/Looking to manage account security settings/, "계정 보안 설정을 관리하는 법을 찾고 계신가요?"], [/Export all repositories and profile metadata for/, "다음 계정에 대한 모든 저장소와 메타데이터를 내보냅니다 : "], [/Exports will be available for 7 days/, "내보내기는 7일간 유효합니다"]
+    , [/Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes./, "GitHub의 테마를 선택해주세요. 하나의 테마를 선택하거나 시스템과 동기화하여 낮/밤 테마를 자동 전환하도록 할 수 있습니다"]]),
+    번역("1100J", ".col-md-9.col-12 h3", [[/Theme mode/, "테마 모드"]]),
+    번역("1100J", ".col-md-9.col-12 span", [[/GitHub theme will match your system active settings/, "깃허브 테마를 당신의 시스템 상태에 맞춰 변경되도록 합니다"]]),
 
     번역("1200A", ".container-lg.mx-auto.p-responsive a", [[/Explore/, "탐색"], [/Topics/, "주제"], [/Trending/, "트렌드"], [/Collections/, "컬렉션"], [/Events/, "이벤트"], [/GitHub Sponsors/, "깃허브 스폰서"], [/Get email updates/, "이메일 업데이트"]]),
     번역("1200B", ".border-top.px-3 a", [[/starred topics/, "스타받은 토픽"]]),
     번역("1200C", ".border-top.p-3 a", [[/starred repository/, "스타받은 저장소"]]),
     번역("1200D", ".Box-header.d-flex a", [[/Trending repositories/, "뜨고있는 저장소들"], [/Trending developers/, "뜨고있는 개발자들"]]),
     번역("1200E", ".col-md-8.col-lg-6.py-4 h1", [[/Here's what we found based on your interests/, "당신의 관심사를 기반으로 찾은 내용은 다음과 같습니다"]]),
+
+    번역("1300A", ".UnderlineNav-body a", [[/Overview/, "개요"], [/Repositories/, "저장소"], [/Projects/, "프로젝트"], [/Packages/, "패키지"]]),
+    번역("1300B", ".mb-3 button", [[/Edit profile/, "프로필 수정하기"]]),
+    번역("1300B", ".mb-3 a", [[/follower/, "팔로워"], [/following/, "팔로잉"]]),
+    번역("1300C", ".mt-4 h2", [[/Popular repositories/, "인기있는 저장소들"]]),
+//    번역("1300D", ".col-12.col-lg-10 h2", [[/contributions in the last year/, " = 지난 해 총 기여수"]]),
+//    번역("1300D", ".position-relative details", [[/Contribution settings/, "기여 설정"]]),
+//    번역("1300E", ".user-activity-overview h5", [[/Activity overview/, "활동 개요"]]),
+
 ];
 
 function 번역하기() {
