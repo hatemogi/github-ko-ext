@@ -267,20 +267,23 @@ const 번역목록: 번역정보[] = [
     , [/Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes./, "GitHub의 테마를 선택해주세요. 하나의 테마를 선택하거나 시스템과 동기화하여 낮/밤 테마를 자동 전환하도록 할 수 있습니다"]]),
     번역("1100J", ".col-md-9.col-12 h3", [[/Theme mode/, "테마 모드"]]),
     번역("1100J", ".col-md-9.col-12 span", [[/GitHub theme will match your system active settings/, "깃허브 테마를 당신의 시스템 상태에 맞춰 변경되도록 합니다"]]),
-
+// Explorer
     번역("1200A", ".container-lg.mx-auto.p-responsive a", [[/Explore/, "탐색"], [/Topics/, "주제"], [/Trending/, "트렌드"], [/Collections/, "컬렉션"], [/Events/, "이벤트"], [/GitHub Sponsors/, "깃허브 스폰서"], [/Get email updates/, "이메일 업데이트"]]),
     번역("1200B", ".border-top.px-3 a", [[/starred topics/, "스타받은 토픽"]]),
     번역("1200C", ".border-top.p-3 a", [[/starred repository/, "스타받은 저장소"]]),
     번역("1200D", ".Box-header.d-flex a", [[/Trending repositories/, "뜨고있는 저장소들"], [/Trending developers/, "뜨고있는 개발자들"]]),
     번역("1200E", ".col-md-8.col-lg-6.py-4 h1", [[/Here's what we found based on your interests/, "당신의 관심사를 기반으로 찾은 내용은 다음과 같습니다"]]),
-
+// My repositories
     번역("1300A", ".UnderlineNav-body a", [[/Overview/, "개요"], [/Repositories/, "저장소"], [/Projects/, "프로젝트"], [/Packages/, "패키지"]]),
     번역("1300B", ".mb-3 button", [[/Edit profile/, "프로필 수정하기"]]),
     번역("1300B", ".mb-3 a", [[/follower/, "팔로워"], [/following/, "팔로잉"]]),
     번역("1300C", ".mt-4 h2", [[/Popular repositories/, "인기있는 저장소들"]]),
-//    번역("1300D", ".col-12.col-lg-10 h2", [[/contributions in the last year/, " = 지난 해 총 기여수"]]),
-//    번역("1300D", ".position-relative details", [[/Contribution settings/, "기여 설정"]]),
-//    번역("1300E", ".user-activity-overview h5", [[/Activity overview/, "활동 개요"]]),
+    번역("1300D", ".d-flex.flex-wrap span", [[/Type/, "타입"], [/Language/, "언어"], [/Sort/, "분류"]]),
+    번역("1300D", ".SelectMenu-modal span", [[/Select type/, "타입 선택"], [/Select language/, "언어 선택하기"]]),
+    번역("1300D", ".SelectMenu-list span", [[/All/, "모두"], [/Public/, "공개"], [/Private/, "비공개"], [/Sources/, "소스"], [/Forks/, "포크"], [/Archived/, "아카이브"], [/Mirrors/, "미러"], [/Last updated/, "최신 업데이트"], [/Name/, "이름"], [/Stars/, "스타"], [/Script/, "스크립트"]]),
+    번역("1300D", ".d-flex.flex-items-start a", [[/New/, "추가"]]),
+    번역("1300E", ".BtnGroup button", [[/Previous/, "이전"], [/Next/, "다음"]]), //Previous와 Next가 버튼과 링크로 서로 전환될 때를 대비
+    번역("1300E", ".BtnGroup a", [[/Previous/, "이전"], [/Next/, "다음"]]),
 
 ];
 
