@@ -273,11 +273,22 @@ const 번역목록: 번역정보[] = [
     번역("1200C", ".border-top.p-3 a", [[/starred repository/, "스타받은 저장소"]]),
     번역("1200D", ".Box-header.d-flex a", [[/Trending repositories/, "뜨고있는 저장소들"], [/Trending developers/, "뜨고있는 개발자들"]]),
     번역("1200E", ".col-md-8.col-lg-6.py-4 h1", [[/Here's what we found based on your interests/, "당신의 관심사를 기반으로 찾은 내용은 다음과 같습니다"]]),
+    번역("1200F", ".border.my-4 h2", [[/Based on repositories you’ve viewed/, "관심사에 맞는 저장소 추천입니다"]]),
+    번역("1200F", ".border.my-4 h2", [[/Based on topics you've starred/, "스타를 준 주제 추천입니다"]]),
+    번역("1200G", ".border-top.p-3 a", [[/See more matching repositories/, "다른 추천 저장소 보기"]]),
+    번역("1200H", ".button_to button", [[/Star/, "스타"]]),
+    번역("1200I", ".Box-footer a", [[/See more trending repositories/, "뜨고있는 저장소들 더보기"], [/See more trending developers/, "뜨고있는 개발자들 더보기"]]),
+    번역("1200J", ".col-md-8.col-lg-6.py-4 h2", [[/That's everything we found for you, for now/, "여기까지가 현재 당신을 위해 찾은 모든 것입니다."]]),
+    번역("1200J", ".col-md-8.col-lg-6.py-4 p", [[/Come back soon to see what we find next/, "우리가 다음에 무엇을 찾을 수 있는지 확인하기 위해 곧 다시 돌아오세요."]]),
+    번역("1200J", ".col-md-8.col-lg-6.py-4 span a", [[/get email updates/, "이메일 업데이트를 받아보세요"]]),
+
+
 // My repositories
     번역("1300A", ".UnderlineNav-body a", [[/Overview/, "개요"], [/Repositories/, "저장소"], [/Projects/, "프로젝트"], [/Packages/, "패키지"]]),
     번역("1300B", ".mb-3 button", [[/Edit profile/, "프로필 수정하기"]]),
     번역("1300B", ".mb-3 a", [[/follower/, "팔로워"], [/following/, "팔로잉"]]),
     번역("1300C", ".mt-4 h2", [[/Popular repositories/, "인기있는 저장소들"]]),
+    번역("1300D", "form.width-full input[name=q]", [[/Find a repository/, "저장소 찾아보기"]], 바탕값변환),
     번역("1300D", ".d-flex.flex-wrap span", [[/Type/, "타입"], [/Language/, "언어"], [/Sort/, "분류"]]),
     번역("1300D", ".SelectMenu-modal span", [[/Select type/, "타입 선택"], [/Select language/, "언어 선택하기"]]),
     번역("1300D", ".SelectMenu-list span", [[/All/, "모두"], [/Public/, "공개"], [/Private/, "비공개"], [/Sources/, "소스"], [/Forks/, "포크"], [/Archived/, "아카이브"], [/Mirrors/, "미러"], [/Last updated/, "최신 업데이트"], [/Name/, "이름"], [/Stars/, "스타"], [/Script/, "스크립트"]]),
