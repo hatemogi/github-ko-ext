@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "GitHub 한글화 mandoo ver.",
+  "name": "GitHub 한글화",
   "short_name": "github_ko",
   "version": "0.1.7",
-  "description": "goBlock 이재성입니다. Github_ko_ext 확장을 클론, 추가작업을 개인적으로 해보았습니다. 테스트용으로 업데이트해봅니다",
+  "description": "GitHub.com의 내용을 한글로 번역해 보여줍니다. 이 확장 프로그램을 설치하신 뒤, 깃헙에 방문하시면 한글로 번역된 내용이 보입니다.",
   "author": "https://github.com/hatemogi/github-ko-ext",
   "homepage_url": "https://github.com/hatemogi/github-ko-ext",
   "icons": {
