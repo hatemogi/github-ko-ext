@@ -241,22 +241,13 @@ const 번역목록: 번역정보[] = [
         [/Least complete/, "덜 끝난 순서"],
         [/Most complete/, "많이 끝난 순서"],
         [/Least issues/, "이슈 적은 순서로"]]),
+
+// settings 일부변경중
     번역("1100A", ".menu.position-relative span", [[/Account settings/, "계정 설정"]]),
-    번역("1100B", ".menu.position-relative a", [[/Profile/, "프로필"],
-                                                [/Account/, "계정"],
-                                                [/Appearance/, "테마"],
-                                                [/Account security/, "계정 보안"],
-                                                [/Billing & plans/, "결제 및 플랜"],
-                                                [/Security log/, "보안 로그"],
-                                                [/Security & analysis/, "보안 분석"],
-                                                [/Emails/, "이메일"],
-                                                [/Notifications/, "알림"],
-                                                [/SSH and GPG keys/, "SSH와 GPG키"],
-                                                [/Repositories/, "저장소"],
-                                                [/Packages/, "패키지"],
-                                                [/Organizations/, "조직"],
-                                                [/Saved replies/, "저장된 댓글"],
-                                                [/Applications/, "애플리케이션"]]),
+    번역("1100B", ".menu.position-relative a", [[/Profile/, "프로필"], [/Account/, "계정"], [/Appearance/, "테마"], [/Account security/, "계정 보안"], [/Billing & plans/, "결제 및 플랜"],
+                                                [/Security log/, "보안 로그"], [/Security & analysis/, "보안 분석"], [/Emails/, "이메일"],
+                                                [/Notifications/, "알림"], [/SSH and GPG keys/, "SSH와 GPG키"], [/Repositories/, "저장소"], [/Packages/, "패키지"],
+                                                [/Organizations/, "조직"], [/Saved replies/, "저장된 댓글"], [/Applications/, "애플리케이션"]]),
     번역("1100C", ".menu a", [[/Developer settings/, "개발자 설정"]]),
     번역("1100C", ".menu span", [[/Moderation settings/, "중재 설정"]]),
     번역("1100C", ".menu > a", [[/Blocked users/, "차단된 유저"]]),
@@ -267,7 +258,8 @@ const 번역목록: 번역정보[] = [
     , [/Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes./, "GitHub의 테마를 선택해주세요. 하나의 테마를 선택하거나 시스템과 동기화하여 낮/밤 테마를 자동 전환하도록 할 수 있습니다"]]),
     번역("1100J", ".col-md-9.col-12 h3", [[/Theme mode/, "테마 모드"]]),
     번역("1100J", ".col-md-9.col-12 span", [[/GitHub theme will match your system active settings/, "깃허브 테마를 당신의 시스템 상태에 맞춰 변경되도록 합니다"]]),
-// Explorer
+
+    // Explorer 페이지 대부분 변경완료
     번역("1200A", ".container-lg.mx-auto.p-responsive a", [[/Explore/, "탐색"], [/Topics/, "주제"], [/Trending/, "트렌드"], [/Collections/, "컬렉션"], [/Events/, "이벤트"], [/GitHub Sponsors/, "깃허브 스폰서"], [/Get email updates/, "이메일 업데이트"]]),
     번역("1200B", ".border-top.px-3 a", [[/starred topics/, "스타받은 토픽"]]),
     번역("1200C", ".border-top.p-3 a", [[/starred repository/, "스타받은 저장소"]]),
@@ -282,8 +274,7 @@ const 번역목록: 번역정보[] = [
     번역("1200J", ".col-md-8.col-lg-6.py-4 p", [[/Come back soon to see what we find next/, "우리가 다음에 무엇을 찾을 수 있는지 확인하기 위해 곧 다시 돌아오세요."]]),
     번역("1200J", ".col-md-8.col-lg-6.py-4 span a", [[/get email updates/, "이메일 업데이트를 받아보세요"]]),
 
-
-// My repositories
+// My repositories 저장소 상단, 버튼, 등 수정
     번역("1300A", ".UnderlineNav-body a", [[/Overview/, "개요"], [/Repositories/, "저장소"], [/Projects/, "프로젝트"], [/Packages/, "패키지"]]),
     번역("1300B", ".mb-3 button", [[/Edit profile/, "프로필 수정하기"]]),
     번역("1300B", ".mb-3 a", [[/follower/, "팔로워"], [/following/, "팔로잉"]]),
