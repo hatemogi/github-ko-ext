@@ -254,10 +254,26 @@ const 번역목록: 번역정보[] = [
     번역("1100E", ".col-md-9.col-12 h2", [[/Public profile/, "공개 프로필"], [/Change username/, "계정명 변경"], [/Export account data/, "계정 데이터 내보내기"], [/Successor settings/, "후속 설정"], [/Theme preferences/, "선호 테마 선택하기"]]),
     번역("1100G", ".col-12.col-md-4 label", [[/Profile picture/, "프로필 사진"]]),
     번역("1100H", ".col-md-9.col-12 summary", [[/Change username/, "계정명 변경"]]),
+    번역("1100H", ".col-md-9.col-12 h2", [[/Delete account/, "계정 삭제"]]),
     번역("1100I", ".col-md-9.col-12 p", [[/Looking to manage account security settings/, "계정 보안 설정을 관리하는 법을 찾고 계신가요?"], [/Export all repositories and profile metadata for/, "다음 계정에 대한 모든 저장소와 메타데이터를 내보냅니다 : "], [/Exports will be available for 7 days/, "내보내기는 7일간 유효합니다"]
-    , [/Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes./, "GitHub의 테마를 선택해주세요. 하나의 테마를 선택하거나 시스템과 동기화하여 낮/밤 테마를 자동 전환하도록 할 수 있습니다"]]),
+    , [/Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes./, "GitHub의 테마를 선택해주세요. 하나의 테마를 선택하거나 시스템과 동기화하여 낮/밤 테마를 자동 전환하도록 할 수 있습니다"], [/Once you delete your account, there is no going back. Please be certain/, "한 번 계정을 삭제하시면 돌이킬 수 없습니다. 신중히 결정하세요"]]),
     번역("1100J", ".col-md-9.col-12 h3", [[/Theme mode/, "테마 모드"]]),
-    번역("1100J", ".col-md-9.col-12 span", [[/GitHub theme will match your system active settings/, "깃허브 테마를 당신의 시스템 상태에 맞춰 변경되도록 합니다"]]),
+    
+    // 테마모드를 single theme로 설정한 경우
+    번역("1100J", ".d-flex.flex-items-center.mt-2.mb-4 span", [[/GitHub will use your selected theme/, "GitHub는 선택하신 테마를 사용합니다"]]),
+    번역("1100J", ".d-flex.gutter-condensed.flex-wrap span", [[/Default light/, "기본 밝은 테마"]]),
+    번역("1100J", ".d-flex.gutter-condensed.flex-wrap span", [[/Default dark/, "기본 어두운 테마"]]),
+    번역("1100J", ".d-flex.gutter-condensed.flex-wrap span", [[/Dark dimmed/, "어둡고 흐린 테마"]]),
+
+    // 테마모드를 Sync with system으로 설정한 경우
+    번역("1100K", ".col-md-9.col-12 span", [[/GitHub theme will match your system active settings/, "깃허브 테마를 당신의 시스템 상태에 맞춰 변경되도록 합니다"]]),
+    번역("1100K", ".col-md-5.mr-0.mr-md-3.mb-3.mb-md-0 h4", [[/Day theme/, "밝은 테마"]]),
+    번역("1100K", ".col-md-5 h4", [[/Night theme/, "어두운 테마"]]),
+    번역("1100K", ".color-text-secondary.mb-3.f6", [[/This theme will be active when your system is set to “dark mode”/, "이 테마는 시스템이 '어두운 테마'로 설정되어있을 때 활성화됩니다"], [/This theme will be active when your system is set to “light mode”/, "이 테마는 시스템이 '밝은 테마'로 설정되어있을 때 활성화됩니다"]]),
+    번역("1100K", ".js-setting-toggle h2", [[/Emoji skin tone preference/, "이모티콘 피부톤 선호 선택"]]),
+    번역("1100K", ".text-bold.mb-2", [[/Preferred default emoji skin tone/, "선호하는 기본 이모티콘 피부색"]]),
+
+
 
     // Explorer 페이지 대부분 변경완료
     번역("1200A", ".container-lg.mx-auto.p-responsive a", [[/Explore/, "탐색"], [/Topics/, "주제"], [/Trending/, "트렌드"], [/Collections/, "컬렉션"], [/Events/, "이벤트"], [/GitHub Sponsors/, "깃허브 스폰서"], [/Get email updates/, "이메일 업데이트"]]),
