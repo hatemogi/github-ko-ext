@@ -243,14 +243,14 @@ const 번역목록: 번역정보[] = [
         [/Least issues/, "이슈 적은 순서로"]]),
 
 // settings 일부변경중
-    번역("1100A", ".menu.position-relative span", [[/Account settings/, "계정 설정"]]),
-    번역("1100B", ".menu.position-relative a", [[/Profile/, "프로필"], [/Account/, "계정"], [/Appearance/, "테마"], [/Account security/, "계정 보안"], [/Billing & plans/, "결제 및 플랜"],
+    번역("1100A", 'nav[aria-label="Personal settings"] span', [[/Account settings/, "계정 설정"]]),
+    번역("1100B", 'nav[aria-label="Personal settings"] a', [[/Profile/, "프로필"], [/Account$/, "계정"], [/Appearance/, "테마"], [/Account security/, "계정 보안"], [/Billing & plans/, "결제 및 플랜"],
                                                 [/Security log/, "보안 로그"], [/Security & analysis/, "보안 분석"], [/Emails/, "이메일"],
-                                                [/Notifications/, "알림"], [/SSH and GPG keys/, "SSH와 GPG키"], [/Repositories/, "저장소"], [/Packages/, "패키지"],
-                                                [/Organizations/, "조직"], [/Saved replies/, "저장된 댓글"], [/Applications/, "애플리케이션"]]),
-    번역("1100C", ".menu a", [[/Developer settings/, "개발자 설정"]]),
-    번역("1100C", ".menu span", [[/Moderation settings/, "중재 설정"]]),
-    번역("1100C", ".menu > a", [[/Blocked users/, "차단된 사용자"]]),
+                                                [/Notifications/, "알림"], [/Scheduled reminders/, "정기 재촉"], [/SSH and GPG keys/, "SSH와 GPG키"], [/Repositories/, "저장소"], [/Packages/, "패키지"],
+                                                [/Organizations/, "단체"], [/Saved replies/, "저장된 댓글"], [/Applications/, "애플리케이션"]]),
+    번역("1100C", 'nav[aria-label="Developer settings"] a', [[/Developer settings/, "개발자 설정"]]),
+    번역("1100C", 'nav[aria-label="Moderation settings"] span', [[/Moderation settings/, "중재 설정"]]),
+    번역("1100C", 'nav[aria-label="Moderation settings"] a', [[/Blocked users/, "차단된 사용자"], [/Interaction limits/, "임시 소통 제한"]]),
     번역("1100E", ".col-md-9.col-12 h2", [[/Public profile/, "공개 프로필"], [/Change username/, "계정명 변경"], [/Export account data/, "계정 데이터 내보내기"], [/Successor settings/, "후속 설정"], [/Theme preferences/, "선호 테마 선택하기"]]),
     번역("1100G", ".col-12.col-md-4 label", [[/Profile picture/, "프로필 사진"]]),
     번역("1100H", ".col-md-9.col-12 summary", [[/Change username/, "계정명 변경"]]),
@@ -258,7 +258,7 @@ const 번역목록: 번역정보[] = [
     번역("1100I", ".col-md-9.col-12 p", [[/Looking to manage account security settings/, "계정 보안 설정을 관리하는 법을 찾고 계신가요?"], [/Export all repositories and profile metadata for/, "다음 계정에 있는 모든 저장소와 메타데이터를 내보냅니다 : "], [/Exports will be available for 7 days/, "내보내기는 7일간 유효합니다"]
     , [/Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes./, "GitHub의 테마를 선택해주세요. 테마 하나를 선택하거나 시스템과 동기화하여 낮/밤 테마를 자동 전환할 수 있습니다"], [/Once you delete your account, there is no going back. Please be certain/, "한 번 계정을 삭제하시면 돌이킬 수 없습니다. 신중히 결정하세요"]]),
     번역("1100J", ".col-md-9.col-12 h3", [[/Theme mode/, "테마 모드"]]),
-    
+
     // 테마모드를 single theme로 설정한 경우
     번역("1100J", ".d-flex.flex-items-center.mt-2.mb-4 span", [[/GitHub will use your selected theme/, "GitHub는 선택하신 테마를 사용합니다"]]),
     번역("1100J", ".d-flex.gutter-condensed.flex-wrap span", [[/Default light/, "기본 밝은 테마"]]),
@@ -270,8 +270,8 @@ const 번역목록: 번역정보[] = [
     번역("1100K", ".col-md-5.mr-0.mr-md-3.mb-3.mb-md-0 h4", [[/Day theme/, "밝은 테마"]]),
     번역("1100K", ".col-md-5 h4", [[/Night theme/, "어두운 테마"]]),
     번역("1100K", ".color-text-secondary.mb-3.f6", [[/This theme will be active when your system is set to “dark mode”/, "이 테마는 시스템이 '어두운 테마'로 설정되어있을 때 활성화됩니다"], [/This theme will be active when your system is set to “light mode”/, "이 테마는 시스템이 '밝은 테마'로 설정되어있을 때 활성화됩니다"]]),
-    번역("1100K", ".js-setting-toggle h2", [[/Emoji skin tone preference/, "이모티콘 피부톤 선호 선택"]]),
-    번역("1100K", ".text-bold.mb-2", [[/Preferred default emoji skin tone/, "선호하는 기본 이모티콘 피부색"]]),
+    번역("1100K", ".js-setting-toggle h2", [[/Emoji skin tone preference/, "이모티콘 피부톤 선택"]]),
+    번역("1100K", ".text-bold.mb-2", [[/Preferred default emoji skin tone/, "기본 이모티콘 피부색"]]),
 
 
 
@@ -279,27 +279,30 @@ const 번역목록: 번역정보[] = [
     번역("1200A", ".container-lg.mx-auto.p-responsive a", [[/Explore/, "탐색"], [/Topics/, "주제"], [/Trending/, "트렌드"], [/Collections/, "컬렉션"], [/Events/, "이벤트"], [/GitHub Sponsors/, "깃허브 스폰서"], [/Get email updates/, "이메일 업데이트"]]),
     번역("1200B", ".border-top.px-3 a", [[/starred topics/, "스타 받은 토픽"]]),
     번역("1200C", ".border-top.p-3 a", [[/starred repository/, "스타 받은 저장소"]]),
-    번역("1200D", ".Box-header.d-flex a", [[/Trending repositories/, "뜨고있는 저장소들"], [/Trending developers/, "뜨고있는 개발자들"]]),
-    번역("1200E", ".col-md-8.col-lg-6.py-4 h1", [[/Here's what we found based on your interests/, "당신의 관심사를 기반으로 찾은 내용은 다음과 같습니다"]]),
-    번역("1200F", ".border.my-4 h2", [[/Based on repositories you’ve viewed/, "관심사에 맞는 저장소 추천입니다"]]),
-    번역("1200F", ".border.my-4 h2", [[/Based on topics you've starred/, "스타를 준 주제 추천입니다"]]),
+    번역("1200D", ".Box-header.d-flex a", [[/Trending repositories/, "뜨는 저장소"], [/Trending developers/, "뜨는 개발자"]]),
+    번역("1200E", ".col-md-8.col-lg-6.py-4 h1", [[/Here's what we found based on your interests/, "당신의 관심사를 기반으로 찾은 내용입니다"]]),
+    번역("1200F", ".border.my-4 h2", [[/Based on repositories you’ve viewed/, "열람한 저장소 기반 추천입니다"],
+                                      [/Based on topics you've starred/, "스타를 준 주제 기반 추천입니다"],
+                                      [/Based on repositories you’ve starred/, "스타를 준 저장소 기반 추천입니다"],
+                                      [/Based on people you follow/, "팔로우하는 사람 기반 추천입니다"]]),
     번역("1200G", ".border-top.p-3 a", [[/See more matching repositories/, "더 많은 추천 저장소 보기"]]),
     번역("1200H", ".button_to button", [[/Star/, "스타"]]),
-    번역("1200I", ".Box-footer a", [[/See more trending repositories/, "뜨고 있는 저장소들 더보기"], [/See more trending developers/, "뜨고 있는 개발자들 더보기"]]),
+    번역("1200I", ".Box-footer a", [[/See more trending repositories/, "뜨는 저장소 더 보기"], [/See more trending developers/, "뜨는 개발자 더 보기"]]),
     번역("1200J", ".col-md-8.col-lg-6.py-4 h2", [[/That's everything we found for you, for now/, "여기까지가 현재 당신을 위해 찾은 모든 것입니다."]]),
-    번역("1200J", ".col-md-8.col-lg-6.py-4 p", [[/Come back soon to see what we find next/, "우리가 다음에 무엇을 찾을 수 있는지 확인하기 위해 곧 다시 돌아오세요."]]),
+    번역("1200J", ".col-md-8.col-lg-6.py-4 p", [[/Come back soon to see what we find next,/, "우리가 다음에 무엇을 찾을 수 있는지 확인하기 위해 곧 다시 돌아오시거나,"]]),
+    번역("1200J", ".col-md-8.col-lg-6.py-4 > span", [[/or/, ""]]),
     번역("1200J", ".col-md-8.col-lg-6.py-4 span a", [[/get email updates/, "이메일로 소식을 받아보세요"]]),
 
 // My repositories 저장소 상단, 버튼, 등 수정
-    번역("1300A", ".UnderlineNav-body a", [[/Overview/, "개요"], [/Repositories/, "저장소"], [/Projects/, "프로젝트"], [/Packages/, "패키지"]]),
-    번역("1300B", ".mb-3 button", [[/Edit profile/, "프로필 수정하기"]]),
-    번역("1300B", ".mb-3 a", [[/follower/, "팔로워"], [/following/, "팔로잉"]]),
+    번역("1300A", 'nav[aria-label="User profile"] a', [[/Overview/, "개요"], [/Repositories/, "저장소"], [/Projects/, "프로젝트"], [/Packages/, "패키지"]]),
+    번역("1300B", ".js-profile-editable-area button", [[/Edit profile/, "프로필 수정하기"]]),
+    번역("1300B", ".mb-3 a", [[/follower(s?)/, "팔로워"], [/following/, "팔로잉"]]),
     번역("1300C", ".mt-4 h2", [[/Popular repositories/, "인기 있는 저장소들"]]),
     번역("1300D", "form.width-full input[name=q]", [[/Find a repository/, "저장소 찾아보기"]], 바탕값변환),
-    번역("1300D", ".d-flex.flex-wrap span", [[/Type/, "타입"], [/Language/, "언어"], [/Sort/, "분류"]]),
-    번역("1300D", ".SelectMenu-modal span", [[/Select type/, "타입 선택"], [/Select language/, "언어 선택"]]),
-    번역("1300D", ".SelectMenu-list span", [[/All/, "모두"], [/Public/, "공개"], [/Private/, "비공개"], [/Sources/, "소스"], [/Forks/, "포크"], [/Archived/, "아카이브"], [/Mirrors/, "미러"], [/Last updated/, "최신 업데이트"], [/Name/, "이름"], [/Stars/, "스타"], [/Script/, "스크립트"]]),
-    번역("1300D", ".d-flex.flex-items-start a", [[/New/, "추가"]]),
+    번역("1300D", 'form[aria-label="Repositories"] .d-flex.flex-wrap span', [[/^Type$/, "타입"], [/Language/, "언어"], [/Sort/, "정렬"]]),
+    번역("1300D", 'form[aria-label="Repositories"] .SelectMenu-modal span', [[/Select type/, "타입 선택"], [/Select language/, "언어 선택"], [/Select order/, "정렬 기준"]]),
+    번역("1300D", 'form[aria-label="Repositories"] .SelectMenu-list span', [[/All/, "모두"], [/Public/, "공개"], [/Private/, "비공개"], [/Sources/, "소스"], [/Forks/, "포크"], [/Archived/, "아카이브"], [/Mirrors/, "미러"], [/Last updated/, "최신 업데이트"], [/Name/, "이름"], [/Stars/, "스타"], [/^Script/, "스크립트"]]),
+    번역("1300D", ".d-flex.flex-items-start a", [[/New/, "새 저장소"]]),
     번역("1300E", ".BtnGroup button", [[/Previous/, "이전"], [/Next/, "다음"]]), //Previous와 Next가 버튼과 링크로 서로 전환될 때를 대비
     번역("1300E", ".BtnGroup a", [[/Previous/, "이전"], [/Next/, "다음"]]),
 

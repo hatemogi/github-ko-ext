@@ -82,5 +82,6 @@ document.querySelectorAll('.repository-content .numbers-summary a').forEach(a =>
 * [김대현(@hatemogi)](https://github.com/hatemogi) - 프로젝트 시작
 * [D2Coding 글꼴](https://github.com/naver/d2codingfont) - 코딩 글꼴 공개
 * [황승현(@hsh2001)](https://github.com/hsh2001)
+* [만두아빠(@mandoopapa)](https://github.com/mandoopapa))
 
 감사합니다.
