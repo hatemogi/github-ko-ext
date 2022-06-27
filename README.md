@@ -1,5 +1,16 @@
 # GitHub 한글화 실험 프로젝트
 
+## 프로젝트 종료 안내
+
+이 프로젝트는 실험 목표를 확인했으며, 개발자의 추가 진행 의욕이 저하되어, 중단 되었습니다.
+
+* [프로젝트를 소개하는 글 링크](https://medium.com/happyprogrammer-in-jeju/github-%ED%95%9C%EA%B8%80%ED%99%94-%EC%8B%A4%ED%97%98-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-5b9e040d1d75)
+* [프로젝트를 마치는 글 링크](https://medium.com/happyprogrammer-in-jeju/github-%ED%95%9C%EA%B8%80%ED%99%94-%EC%8B%A4%ED%97%98-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A5%BC-%EB%A7%88%EC%B9%98%EB%A9%B0-8ddabe729beb)
+
+감사합니다.
+
+## 개요
+
 > "개발자가 자주 쓰는 GitHub 웹사이트를 한글화 하면 친숙해서 좋지 않을까?"
 
 위 질문에서 시작한 실험 프로젝트입니다. 실제로 한글화를 해보고 직접 써봐서 그 답을 찾아보고자 합니다. GitHub을 한글화 하는 **크롬 확장 프로그램**을 개발하고 있습니다.
