@@ -305,6 +305,7 @@ const 번역목록: 번역정보[] = [
     번역("1300D", ".d-flex.flex-items-start a", [[/New/, "새 저장소"]]),
     번역("1300E", ".BtnGroup button", [[/Previous/, "이전"], [/Next/, "다음"]]), //Previous와 Next가 버튼과 링크로 서로 전환될 때를 대비
     번역("1300E", ".BtnGroup a", [[/Previous/, "이전"], [/Next/, "다음"]]),
+    번역("1300F", "#repo-content-pjax-container > div > div.Layout.Layout--flowRow-until-md.Layout--sidebarPosition-end.Layout--sidebarPosition-flowRow-end > div.Layout-sidebar > div > div > div > h2 > a", [[/Contributors/, "기여자"]]),
 
 ];
 
